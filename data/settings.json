@@ -1,0 +1,480 @@
+{
+  "0": {
+    "id": "brand-croma",
+    "name": "Croma",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgZKpUeD89-DAEniLEAcqQ_LdYD9J2QqTzkZ4Z4Zr5XGx3n2eaIdY_ls2ufBFfK118zbRDROHDS5QsuMj974gnw752VCSE58Yi7P9OOk4oSGgT8W9Y49hza6KSMF4TQqrwCGAdnEHtiTnUqI-JbySYRi4KcpAu-UPYtnN3FbkxbWxDsKEif9IGFAYgXVgc",
+    "order": 0
+  },
+  "1": {
+    "id": "brand-voltas",
+    "name": "Voltas",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEivuBDrV2Dyhf-LDA2dEAyl9qQEnmSbzFG9dIIbiqPJDGb5-YKwITsM1Nv6kfjDHQio-bzA0eVVhQRm_UYxXaxZHc4WdSqXR1flHw-91y05HH-4Osz2PReO9OqRKgL-TP6Zkt4KibFQyHdzU-Vz1umLPwOCl5HnjX67-_E25_ZVjz_5NBATajt4j7zqKq8",
+    "order": 1
+  },
+  "2": {
+    "id": "brand-lg",
+    "name": "LG",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhIMV_UQRnK74xd-k0IRbvxUrPYbraxYoUzSeppiz-XkfRmumbW8kxTn4KryDfUcfZ3N3wrkWFOOfd98fz9m_3JsueDdpbzQaN4AasfFvjXMumaGZLb3lR7_Vdgq8uy3E0cfpk8MguM4j7PY7rxVcA4jQBqXvnrR1SB-MzoRlc1-f4c5vWAQnRP0d8MDnE",
+    "order": 2
+  },
+  "3": {
+    "id": "brand-samsung",
+    "name": "Samsung",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj0XE41CSUHcwhtPkC7i-pp6Cue1lG-rQLFRxwqg134FmQljFQDYxXi8qbuuBeywYjqKolt4IvNwssofDkd1DuV50Vngc8UNzgjiLyXeANrrFfp0rF41wGfzD8ro5VIZ-kQD8DqygIk30SO9tTCjf8t_NHuZSGQwD1sKDQKbRuJrzj6vrnzOj8VynL3vxg",
+    "order": 3
+  },
+  "4": {
+    "id": "brand-whirlpool",
+    "name": "Whirlpool",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj0sGbhGlqRe3ep2uSmg8atqMLLi_knEmTEi-jJdRbL9-ipggTDgKx1bt5cS3r8X3yuxPrxYDQcYLvOvMDwwbwvGlzqFQGGS5c9vGdlrkrh6COMABpLysXHHtEZ_SUgK4TjakcViCBLIXBioARkXZNZPUDQe53ADDd0HUaju9ePz_lmIkO1c8OttA2KErE",
+    "order": 4
+  },
+  "5": {
+    "id": "brand-hitachi",
+    "name": "Hitachi",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhpuNOxH743RHjP_qxE9B_TUhRSL-700WKci2BZCCqzRCEdMeeugRVo85yT9lUGRrX5fSF1NlJnIrifvjIgyfR40WGtgORgn0Z4uIlZXSpjoUpfPFkk9sdKqbYBYE6FqVx8MIF32PeRylUNbCjgD5a7BhgFGsU8NM9YAFYZWU4o_74_8LX_2YGlUtbU9dY",
+    "order": 5
+  },
+  "6": {
+    "id": "brand-godrej",
+    "name": "Godrej",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhvTC3pYwP5Ni3NzOiJDPrKRm6S7lwGtV0rK7Dxs3RfS6n3RiPp2u25qrUjQFVRw-7oNlV5Ms1ppcRmV2GsUsDf5bHEY4Nm-rhX7p5w-lSpMJFzNgpJqg5KSikjkcSK-5CoMsf_7nuoO0OIwljpRQ3ic86BCcmPclbNpwntak178ZuH1XzZ-mHXzneTIU0",
+    "order": 6
+  },
+  "7": {
+    "id": "brand-panasonic",
+    "name": "Panasonic",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEidEUID-62QH1ZwidoMNTfFeUCy0F0C9_SYF-fsR0_-fuYk9MEyBerKojpArcJaz1OJ_W5nTplKEZxZRuDKh4ly2Mm-2WTuQjldwOjaLBASRRCd7xWVCZBTl5M1dmzfsGvXqqCVaPzbAGydzorS9fNc3swvVp3vIvlYPt7HwV3aButQgAsDVKe5cchI8Vs",
+    "order": 7
+  },
+  "8": {
+    "id": "brand-ifb",
+    "name": "IFB",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEitbfyZ2SlogHNyuctB79x1lhBLRF94XiktW1rN_gX57Uze0BU3hO2DXg6RX93O1mL2Bek-aGl3v6RaPTY_sOzdvMpRpt8W-DPlKlbHxzsyqtQVcmBxQUhWwk-AOcIi6UfrJo5xC9onJcFk2P9BR0lms9pBZZW5Eu5_qtfdmrISaaSjziQv8Z4eu9nGvXA",
+    "order": 8
+  },
+  "9": {
+    "id": "brand-haier",
+    "name": "Haier",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhQ5v1ulQPUOjg2HTvlzpGDFRMBzfIBvlQ5Fh8Apyvy_R6ke-2gu1pnL_KQmpmS0jj3o-1a209qDxU6tlmk6qzDaaxUjAjCX44_S-mEH1aq-UNfpG56OhfEqnn9L473L-FpS-hyqaF4kNifzRWAdonru_rs8G9dPW5EqzkVlSy_tk47oX7neVAoa6lAP6w",
+    "order": 9
+  },
+  "10": {
+    "id": "brand-lloyd",
+    "name": "Lloyd",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiGJ6FDXPoQ8sl4--E-zvBmQZP8Zqb7w8FCcCL1wJxjIu4WmVgiGfpp2ZeqFsgTfnD4l2oSoNLqJQyYPIvuPeeexDtclNEvG8EhismIBm1EO8wviyzTHDpaPrsycCpAs7CuVSsTbaCYTg3oEXRhb2Kz05Fa7GGXQPXF4dPKxyWbp_4pXusMWYIB7xXUjXw",
+    "order": 10
+  },
+  "11": {
+    "id": "brand-tcl",
+    "name": "TCL",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgC6ichq0lF7KaIfOmVLFXt2m64ua_iFSOrkWgUimUn_d3ZTg8c7VfnMIBCoqmuoUVXO98pGPs41u0eA0wo4qd1j9D_HVLUafbUn3igPVWPwDsO0fFxmI7CcIhVuDPkw-OLfg8fpLyZLHB1HAhPrxHfdHUlTkvpUbpdFqbK687kTFEqJpeUmyvv0YTXk60",
+    "order": 11
+  },
+  "12": {
+    "id": "brand-toshiba",
+    "name": "Toshiba",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgQxpb8rz7pQLN-BCQuKBeM2Lu4V0a6Q04XcAlLVx3tHH5hPpxi02rYq-zCphFHaWBChUHEBpvcqgqE5woj-9o8NPvx8rTVVc62uFUgOpM8Z04stHCPSBSblK2nThivD2QYXrZq-GnyyaZQq4lC7XyCgn6AkuPq7ZwoXXBMWmJkUoJTrQ6qiyAcJ6IJsp0",
+    "order": 12
+  },
+  "13": {
+    "id": "brand-oneplus",
+    "name": "OnePlus",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEi8pZpaSC7fxyWDhDfJtPPsxXXwWME9DIMj9hm201y9Al_BJ9VE3dXWJhP7Ei56p-PCzapPe-KD-NBq2lltOZfZ8PctD2CNan5Eyda09GywWfyozdBMoGHDMajb8xmw61uml_iA1Wt4oXAg-9VYscmGlx-G0dnEpEnd9PKvmfGxdghPFOyPPW_uVGPUOBA",
+    "order": 13
+  },
+  "14": {
+    "id": "brand-mi",
+    "name": "Mi",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgDyXHa2GJ3_d3XXF8ptFQGIQhjH6MhxP9AxBEdSzZmEpxMRAr8cytQ4H8VgwYGhDWPRyp75Nkdc7gLu3FRX4e5e9Wq5tRRKEsGt5Uy--eVBZ2_LdY0egbAs9WTIAuYC_m-1Gj_RGQxSrkRD0PXpE4ZADyKoLxSVD6is_mMG2mhMBBgl-PF3Ln_-31hqzA",
+    "order": 14
+  },
+  "15": {
+    "id": "brand-sony",
+    "name": "Sony",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEipQgc9btlXqLnXldFVvboVCwHiVxq-p68tixEilFjFRM8QvhjvdsBdrVSb7TFcDZRVaw7TFvOHlEN57YRarcefOSQIsBMf2mMrlxwWKGjRnuXhJIJJ8R70LmNkkHVZFp39s9lARxW6QXu_kmuXMQK1G97U5jabMx0hMrkT3OshemWyxYpbbM0KbvlQIZ4",
+    "order": 15
+  },
+  "16": {
+    "id": "brand-beko",
+    "name": "Beko",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiAn1N1xEHCCIhZtkmmwsJ-hrP0SiOcqwUD6TNfnlCyrLSTkzQfx3ajCsvg9-qw1xzwUVHbP84WnRI9VK7Di5p95zvnia0J5ytBLxLsTGfe_51yNiFe5Ooz6nHKRvXE5RtNwd2uJgGllFmQ_6HgplNd8q4rfU8f9KIxmD2G32k5pVEMZDsBzdszMO3ByAk",
+    "order": 16
+  },
+  "17": {
+    "id": "brand-morphy-richards",
+    "name": "Morphy Richards",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEjEiLqqqSGrwjCxGP9yLFKW1-rvx7K73zk59_JVnIn6JOaxK8ZGNsmSQf2nAXB0ckf6L43vxaxT51BDtnHaoLjStmPubfRywgbp6NOLFhSrOxNP93Kyl-vRyNiGo1kruyGgU8X8MY7D_os-V-kQKr_v4r7k2hkUrpKikQDq92YKtuwxrzezCDq4XoajdlI",
+    "order": 17
+  },
+  "18": {
+    "id": "brand-blue-star",
+    "name": "Blue Star",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEjBRlh4IVHYLvPHYE3seFGb8o3ZoUvcfc7W4Usy1gEneTe_EvyLGApNquMQ7dDr98RClSiwSv9td1uj2TayPI2Liioe5vxKh0o31ghFd3dP07jau1efKbz1ckzsGYLQbBHf-og8LRaxiUIM84DlUFQ0CP8YX2GgNcovIp9DFqDFSfooDU0_vYc5eX40Wy8",
+    "order": 18
+  },
+  "19": {
+    "id": "brand-daikin",
+    "name": "Daikin",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiJWbRZDuPn6K7GwSX4XlK0Q7hNl9JLBpO3mEnRffWI08An9dH-iyMjQu1GCTUSUbQnmh610ChBEVpvIQoBJeiKhnpouCNj5t_S1auonA0nP7_jLJ-5Mlja0tF2NxsxDrac-myCsvKid3GVzgAhAFk8eRRUsl2B9yDZvL2lTk8Qp4reyeoUeB-m78X_nQ0",
+    "order": 19
+  },
+  "20": {
+    "id": "brand-bosch",
+    "name": "Bosch",
+    "image": "https://blogger.googleusercontent.com/img/a/AVvXsEisaQP01dlVmf5WvN5EKvqLZULADZxktF1feSFiUPBKAavsiym0hqbKFe9XrrbYrkoza0-Dio4igULSuXKGzKfKmiZ-tLppU4GDjDZEVWkLRZm_D0fmSMqxjSLK01nGt6I5_noTRTkj4hB-_Kf44voEGSo1kGVdcnb8BIBZiJli83Dvq9DjXkPQ3wbVntw",
+    "order": 20
+  },
+  "currentOffer": "$59 Service Call",
+  "seo": {
+    "title": "EverPlus Repair Services | AC, Washing Machine, Refrigerator & Microwave Repair",
+    "description": "EverPlus offers same-day AC repair, washing machine repair, refrigerator repair, and microwave repair from licensed, background-checked technicians. Book a certified appliance repair near you today.",
+    "keywords": "ac repair near me, washing machine repair, refrigerator repair service, microwave repair, appliance repair near me, same day ac repair, emergency appliance repair, best appliance repair company, affordable ac repair, washing machine not spinning fix, fridge not cooling repair, licensed appliance technician"
+  },
+  "heroSlides": [
+    {
+      "id": "slide-ac",
+      "badge": "AC REPAIR SPECIAL",
+      "title": "Fast AC Repair, Any Day of the Week",
+      "subtitle": "Certified technicians restore your cooling fast — upfront pricing, no surprises.",
+      "price": "200 Diagnostic",
+      "ctaText": "Schedule AC Repair",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj-CQFOdrl4jDOcpSg-c-naoztpB42V5Dmb6iVoVRmL8IgUV7L2XJhcIH9ugZ3eFJ79eQUmrDvTiNn0D1yGsxqvikICtyCRHQ5Shc-YRm390L6Nf84VFnUkDWMGR2G9BD90FWEE5--K3YDm-j4nMW0k8LneZgv6nhm4YyD2q1qcqBmC7e4YqdI8tycTw5w",
+      "serviceType": "AC Repair",
+      "order": 0
+    },
+    {
+      "id": "slide-washer",
+      "badge": "WASHING MACHINE EXPERTS",
+      "title": "Washing Machine Repair Done Right",
+      "subtitle": "Leaks, noise, or a machine that won't spin — we fix it same day.",
+      "price": "$49 Service Call",
+      "ctaText": "Book a Repair",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEh87Lmr_xMRPua-8QhluX_xZL2l0QFM1CtKyke6sHkaBwsmgN5Kd3B2Te6JY7zLoNnc1wqC6l9axa0VauYU-nXAcEAgMeeWaw2cvS_H1-0IfJwvaXSw209ukyOmiJ5EnT83EykgKVXAxmTHYEiYtxNjzuu9_TigSxA7Ja5McOKyV_FOIOpihFitS1RrPzo",
+      "serviceType": "Washing Machine Repair",
+      "order": 1
+    },
+    {
+      "id": "slide-tv",
+      "badge": "LED TV REPAIR",
+      "title": "LED & Smart TV Repair Specialists",
+      "subtitle": "Screen, panel, and power issues fixed by certified electronics technicians.",
+      "price": "Free Estimate",
+      "ctaText": "Get a Free Estimate",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgtAgZpxdNCD-aYAkvEgj41wTuIaROEW7F2nuNIoJma48ON1S2jwtDD135akyMP2Ep6MumfnhQvCrB_WfzhnP-siKiTqClBM7TR94JFpzHW0yq0F0YhXSeokPPw7RVhkUBo61wR9OXV7bjYsGi8DZl6y0TlL4nCn937Xo2h2tpYq7WkMKBoxxUMnxDT-oY",
+      "serviceType": "LED TV Repair",
+      "order": 2
+    }
+  ],
+  "brandLogos": [
+    {
+      "id": "brand-voltas",
+      "name": "Voltas",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEivuBDrV2Dyhf-LDA2dEAyl9qQEnmSbzFG9dIIbiqPJDGb5-YKwITsM1Nv6kfjDHQio-bzA0eVVhQRm_UYxXaxZHc4WdSqXR1flHw-91y05HH-4Osz2PReO9OqRKgL-TP6Zkt4KibFQyHdzU-Vz1umLPwOCl5HnjX67-_E25_ZVjz_5NBATajt4j7zqKq8",
+      "order": 0
+    },
+    {
+      "id": "brand-lg",
+      "name": "LG",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhIMV_UQRnK74xd-k0IRbvxUrPYbraxYoUzSeppiz-XkfRmumbW8kxTn4KryDfUcfZ3N3wrkWFOOfd98fz9m_3JsueDdpbzQaN4AasfFvjXMumaGZLb3lR7_Vdgq8uy3E0cfpk8MguM4j7PY7rxVcA4jQBqXvnrR1SB-MzoRlc1-f4c5vWAQnRP0d8MDnE",
+      "order": 1
+    },
+    {
+      "id": "brand-samsung",
+      "name": "Samsung",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj0XE41CSUHcwhtPkC7i-pp6Cue1lG-rQLFRxwqg134FmQljFQDYxXi8qbuuBeywYjqKolt4IvNwssofDkd1DuV50Vngc8UNzgjiLyXeANrrFfp0rF41wGfzD8ro5VIZ-kQD8DqygIk30SO9tTCjf8t_NHuZSGQwD1sKDQKbRuJrzj6vrnzOj8VynL3vxg",
+      "order": 2
+    },
+    {
+      "id": "brand-whirlpool",
+      "name": "Whirlpool",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj0sGbhGlqRe3ep2uSmg8atqMLLi_knEmTEi-jJdRbL9-ipggTDgKx1bt5cS3r8X3yuxPrxYDQcYLvOvMDwwbwvGlzqFQGGS5c9vGdlrkrh6COMABpLysXHHtEZ_SUgK4TjakcViCBLIXBioARkXZNZPUDQe53ADDd0HUaju9ePz_lmIkO1c8OttA2KErE",
+      "order": 3
+    },
+    {
+      "id": "brand-hitachi",
+      "name": "Hitachi",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhpuNOxH743RHjP_qxE9B_TUhRSL-700WKci2BZCCqzRCEdMeeugRVo85yT9lUGRrX5fSF1NlJnIrifvjIgyfR40WGtgORgn0Z4uIlZXSpjoUpfPFkk9sdKqbYBYE6FqVx8MIF32PeRylUNbCjgD5a7BhgFGsU8NM9YAFYZWU4o_74_8LX_2YGlUtbU9dY",
+      "order": 4
+    },
+    {
+      "id": "brand-godrej",
+      "name": "Godrej",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhvTC3pYwP5Ni3NzOiJDPrKRm6S7lwGtV0rK7Dxs3RfS6n3RiPp2u25qrUjQFVRw-7oNlV5Ms1ppcRmV2GsUsDf5bHEY4Nm-rhX7p5w-lSpMJFzNgpJqg5KSikjkcSK-5CoMsf_7nuoO0OIwljpRQ3ic86BCcmPclbNpwntak178ZuH1XzZ-mHXzneTIU0",
+      "order": 5
+    },
+    {
+      "id": "brand-panasonic",
+      "name": "Panasonic",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEidEUID-62QH1ZwidoMNTfFeUCy0F0C9_SYF-fsR0_-fuYk9MEyBerKojpArcJaz1OJ_W5nTplKEZxZRuDKh4ly2Mm-2WTuQjldwOjaLBASRRCd7xWVCZBTl5M1dmzfsGvXqqCVaPzbAGydzorS9fNc3swvVp3vIvlYPt7HwV3aButQgAsDVKe5cchI8Vs",
+      "order": 6
+    },
+    {
+      "id": "brand-ifb",
+      "name": "IFB",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEitbfyZ2SlogHNyuctB79x1lhBLRF94XiktW1rN_gX57Uze0BU3hO2DXg6RX93O1mL2Bek-aGl3v6RaPTY_sOzdvMpRpt8W-DPlKlbHxzsyqtQVcmBxQUhWwk-AOcIi6UfrJo5xC9onJcFk2P9BR0lms9pBZZW5Eu5_qtfdmrISaaSjziQv8Z4eu9nGvXA",
+      "order": 7
+    },
+    {
+      "id": "brand-haier",
+      "name": "Haier",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhQ5v1ulQPUOjg2HTvlzpGDFRMBzfIBvlQ5Fh8Apyvy_R6ke-2gu1pnL_KQmpmS0jj3o-1a209qDxU6tlmk6qzDaaxUjAjCX44_S-mEH1aq-UNfpG56OhfEqnn9L473L-FpS-hyqaF4kNifzRWAdonru_rs8G9dPW5EqzkVlSy_tk47oX7neVAoa6lAP6w",
+      "order": 8
+    },
+    {
+      "id": "brand-lloyd",
+      "name": "Lloyd",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiGJ6FDXPoQ8sl4--E-zvBmQZP8Zqb7w8FCcCL1wJxjIu4WmVgiGfpp2ZeqFsgTfnD4l2oSoNLqJQyYPIvuPeeexDtclNEvG8EhismIBm1EO8wviyzTHDpaPrsycCpAs7CuVSsTbaCYTg3oEXRhb2Kz05Fa7GGXQPXF4dPKxyWbp_4pXusMWYIB7xXUjXw",
+      "order": 9
+    },
+    {
+      "id": "brand-tcl",
+      "name": "TCL",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgC6ichq0lF7KaIfOmVLFXt2m64ua_iFSOrkWgUimUn_d3ZTg8c7VfnMIBCoqmuoUVXO98pGPs41u0eA0wo4qd1j9D_HVLUafbUn3igPVWPwDsO0fFxmI7CcIhVuDPkw-OLfg8fpLyZLHB1HAhPrxHfdHUlTkvpUbpdFqbK687kTFEqJpeUmyvv0YTXk60",
+      "order": 10
+    },
+    {
+      "id": "brand-toshiba",
+      "name": "Toshiba",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgQxpb8rz7pQLN-BCQuKBeM2Lu4V0a6Q04XcAlLVx3tHH5hPpxi02rYq-zCphFHaWBChUHEBpvcqgqE5woj-9o8NPvx8rTVVc62uFUgOpM8Z04stHCPSBSblK2nThivD2QYXrZq-GnyyaZQq4lC7XyCgn6AkuPq7ZwoXXBMWmJkUoJTrQ6qiyAcJ6IJsp0",
+      "order": 11
+    },
+    {
+      "id": "brand-oneplus",
+      "name": "OnePlus",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEi8pZpaSC7fxyWDhDfJtPPsxXXwWME9DIMj9hm201y9Al_BJ9VE3dXWJhP7Ei56p-PCzapPe-KD-NBq2lltOZfZ8PctD2CNan5Eyda09GywWfyozdBMoGHDMajb8xmw61uml_iA1Wt4oXAg-9VYscmGlx-G0dnEpEnd9PKvmfGxdghPFOyPPW_uVGPUOBA",
+      "order": 12
+    },
+    {
+      "id": "brand-mi",
+      "name": "Mi",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEgDyXHa2GJ3_d3XXF8ptFQGIQhjH6MhxP9AxBEdSzZmEpxMRAr8cytQ4H8VgwYGhDWPRyp75Nkdc7gLu3FRX4e5e9Wq5tRRKEsGt5Uy--eVBZ2_LdY0egbAs9WTIAuYC_m-1Gj_RGQxSrkRD0PXpE4ZADyKoLxSVD6is_mMG2mhMBBgl-PF3Ln_-31hqzA",
+      "order": 13
+    },
+    {
+      "id": "brand-sony",
+      "name": "Sony",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEipQgc9btlXqLnXldFVvboVCwHiVxq-p68tixEilFjFRM8QvhjvdsBdrVSb7TFcDZRVaw7TFvOHlEN57YRarcefOSQIsBMf2mMrlxwWKGjRnuXhJIJJ8R70LmNkkHVZFp39s9lARxW6QXu_kmuXMQK1G97U5jabMx0hMrkT3OshemWyxYpbbM0KbvlQIZ4",
+      "order": 14
+    },
+    {
+      "id": "brand-beko",
+      "name": "Beko",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiAn1N1xEHCCIhZtkmmwsJ-hrP0SiOcqwUD6TNfnlCyrLSTkzQfx3ajCsvg9-qw1xzwUVHbP84WnRI9VK7Di5p95zvnia0J5ytBLxLsTGfe_51yNiFe5Ooz6nHKRvXE5RtNwd2uJgGllFmQ_6HgplNd8q4rfU8f9KIxmD2G32k5pVEMZDsBzdszMO3ByAk",
+      "order": 15
+    },
+    {
+      "id": "brand-morphy-richards",
+      "name": "Morphy Richards",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEjEiLqqqSGrwjCxGP9yLFKW1-rvx7K73zk59_JVnIn6JOaxK8ZGNsmSQf2nAXB0ckf6L43vxaxT51BDtnHaoLjStmPubfRywgbp6NOLFhSrOxNP93Kyl-vRyNiGo1kruyGgU8X8MY7D_os-V-kQKr_v4r7k2hkUrpKikQDq92YKtuwxrzezCDq4XoajdlI",
+      "order": 16
+    },
+    {
+      "id": "brand-blue-star",
+      "name": "Blue Star",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEjBRlh4IVHYLvPHYE3seFGb8o3ZoUvcfc7W4Usy1gEneTe_EvyLGApNquMQ7dDr98RClSiwSv9td1uj2TayPI2Liioe5vxKh0o31ghFd3dP07jau1efKbz1ckzsGYLQbBHf-og8LRaxiUIM84DlUFQ0CP8YX2GgNcovIp9DFqDFSfooDU0_vYc5eX40Wy8",
+      "order": 17
+    },
+    {
+      "id": "brand-daikin",
+      "name": "Daikin",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEiJWbRZDuPn6K7GwSX4XlK0Q7hNl9JLBpO3mEnRffWI08An9dH-iyMjQu1GCTUSUbQnmh610ChBEVpvIQoBJeiKhnpouCNj5t_S1auonA0nP7_jLJ-5Mlja0tF2NxsxDrac-myCsvKid3GVzgAhAFk8eRRUsl2B9yDZvL2lTk8Qp4reyeoUeB-m78X_nQ0",
+      "order": 18
+    },
+    {
+      "id": "brand-bosch",
+      "name": "Bosch",
+      "image": "https://blogger.googleusercontent.com/img/a/AVvXsEisaQP01dlVmf5WvN5EKvqLZULADZxktF1feSFiUPBKAavsiym0hqbKFe9XrrbYrkoza0-Dio4igULSuXKGzKfKmiZ-tLppU4GDjDZEVWkLRZm_D0fmSMqxjSLK01nGt6I5_noTRTkj4hB-_Kf44voEGSo1kGVdcnb8BIBZiJli83Dvq9DjXkPQ3wbVntw",
+      "order": 19
+    }
+  ],
+  "footer": {
+    "companyName": "EverPlus",
+    "tagline": "Trusted appliance & HVAC repair, done right the first time.",
+    "phone": "7725097277",
+    "email": "everplusehomeservice@gmail.com",
+    "license": "",
+    "locations": [
+      {
+        "city": "",
+        "address": "Raipur, Chhattisgarh",
+        "phone": "7725097277"
+      }
+    ],
+    "services": [
+      "AC Repair",
+      "Washing Machine Repair",
+      "Refrigerator Repair",
+      "Microwave Repair"
+    ],
+    "quickLinks": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "Service Areas",
+        "href": "/service-areas"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
+    ],
+    "social": []
+  },
+  "pages": {
+    "about": {
+      "heading": "About EverPlus",
+      "intro": "We are a local home appliance & AC repair service provider offering fast, reliable, and affordable repair solutions for households in your area. Our goal is simple — deliver expert service without unnecessary delays, hidden charges, or complications.",
+      "whoWeAreBody": "We are trained technicians with hands-on experience servicing major home appliances and air conditioning systems. Our team is dedicated to providing practical repairs, honest advice, and dependable service quality for everyday households. We operate independently and focus solely on doorstep repair support.",
+      "whatWeDoList": [
+        "Air Conditioners (AC)",
+        "Refrigerators",
+        "Washing Machines",
+        "Microwave Ovens",
+        "LED & Smart TVs"
+      ],
+      "disclaimer": "We are an independent local repair service provider. We are NOT linked with, partnered with, or authorized by any appliance brand or manufacturer. All brand names and trademarks belong to their respective owners and are used only to describe the types of appliances we service. Our role is to provide doorstep repair assistance based on customer requests."
+    },
+    "contact": {
+      "intro": "Having trouble with your AC, refrigerator, microwave, washing machine, or LED TV? EverPlus provides independent, doorstep appliance repair service.",
+      "whatsappNumber": "917725097277",
+      "hours": "Mon - Fri : 9AM - 9PM",
+      "image": {
+        "url": "",
+        "caption": ""
+      }
+    },
+    "faq": {
+      "items": [
+        {
+          "id": "faq-1",
+          "question": "How fast can you send a technician?",
+          "answer": "In most service areas we offer same-day appointments, and emergency slots when available."
+        },
+        {
+          "id": "faq-2",
+          "question": "Are you authorized by appliance manufacturers?",
+          "answer": "No — we're an independent local repair provider, not affiliated with or authorized by any appliance brand or manufacturer."
+        },
+        {
+          "id": "faq-3",
+          "question": "Do you charge for the visit if I don't proceed with the repair?",
+          "answer": "We'll always confirm pricing with you upfront before any work begins — no hidden charges."
+        },
+        {
+          "id": "faq-4",
+          "question": "What areas do you serve?",
+          "answer": "We serve households across our local service area. Contact us with your location to confirm coverage."
+        }
+      ]
+    },
+    "services": {
+      "ac-repair": {
+        "title": "AC Repair",
+        "tagline": "Fast, upfront-priced AC diagnostics and repair for homes and apartments.",
+        "highlights": [
+          "Same-day service",
+          "Licensed technicians",
+          "Upfront pricing",
+          "All major brands"
+        ],
+        "shortDescription": "From units that won't cool to strange noises and refrigerant leaks, we handle all types of AC service and repair.",
+        "detailedDescription": "Our technicians diagnose and repair split ACs, window units, and central systems — including gas refilling, compressor issues, PCB faults, thermostat problems, and routine maintenance. We inspect the full system, explain what's wrong in plain language, and only proceed once you approve the cost.",
+        "middleImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEj8GdLPSNxJmkrCVC5YGvkEvZ07qwwREgH4AwuQYtxyjt8hzYgmsxD_WiJ-CgXQp1L2cuevFryJcEbXOPaMtcoIwYACVd7GkAlEqIrNlsx73368xYKKCaejH8l_n0t5ChhuhsSYkYAUVdg2tSbhKhaHSkaD2wJiQmEUH_XkdN-BJbh53h1ij8AKMbK44yY",
+          "caption": ""
+        },
+        "bottomImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEioXaC3Ks3Q9NnKvK5Gs4RcIbzm_jfrWK0UiAstuyOuHtAI2vjDLaSqOdD6TkVksxQQw7GOqSO08QXYpfp5Q9Sno7pr7JGqgQ2TmJKWQuLQ6S9BaGfZzSQbxf-KHg6gyo0le_OWjCLCyt2dycUGIMBIRguIM6ITuZ3hdCoRkfPEtQQ2qDizsxIaJO1uaeA",
+          "caption": ""
+        }
+      },
+      "washing-machine-repair": {
+        "title": "Washing Machine Repair",
+        "tagline": "Leaks, noise, or a machine that won't spin — fixed the same day.",
+        "highlights": [
+          "Front & top load",
+          "Same-day service",
+          "Genuine parts",
+          "6-month repair warranty"
+        ],
+        "shortDescription": "All types of washing machine service and repair, from minor issues to full breakdowns.",
+        "detailedDescription": "We repair drainage problems, drum and motor issues, door lock and control panel faults, and unusual noise or vibration during the wash or spin cycle — on both front-load and top-load machines, semi-automatic and fully automatic.",
+        "middleImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEhnxdoxpIhZZfiFpcv7Wr5VPSG9mSiNUTNsKRaNM8r8wJ55jkHNdBOH_nnTwJ_XQI0d6c4h8uweAZaBT8vvO8q-zM84_jjfiDzo0_7guKdwgSQMRqAsF15Vf1aXEY6GhkEVxNFsATvN5ssBJKg-UL7m-a4_zhXhm9LokuhkFz-zpiKosUzCLa66gTii8Q8",
+          "caption": ""
+        },
+        "bottomImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEjXdoIKPKbrgX3bkn1BZD0_XCO1awbcM87NTdiTbNwlIX79pjSehqQKXJZk7yV0GG2MHnFPuTIKs5J_tmiV8OzLhMFEW9eZOz1JXQU3Y5H7dQJBusrLh1WYQ9l69YTdUIm2gNDg9pmwXs_VY0WDGd7ifJ7css0js1HXAHW4OqOd1Tt2MLr-6iWUovGwTzU",
+          "caption": ""
+        }
+      },
+      "refrigerator-repair": {
+        "title": "Refrigerator Repair Services",
+        "tagline": "Restore proper cooling fast — single door, double door, or side-by-side.",
+        "highlights": [
+          "Gas refilling",
+          "Compressor repair",
+          "Same-day service",
+          "All brands"
+        ],
+        "shortDescription": "All types of refrigerator service and repair, including cooling and compressor issues.",
+        "detailedDescription": "From a fridge that's not cooling to leaks, unusual noise, thermostat faults, or a broken compressor, we inspect, diagnose, and repair single-door, double-door, and side-by-side refrigerators quickly and affordably.",
+        "middleImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEhCC8gea16sb_eUvT-HxOm3pi0D5ij6sTETHMyMhjUhDOQztnTw4XdNVSNavzpO-ipj0AiS8pQxSHGGsu4lT5V45XrWQxChhnZXPSkPbl7MTzNNTgTMy4reCRyBEakhT7txxhUF0ckeChCfZV97SSxpT4WDqPUUPw-6bNa7bol2DxoFNxNJS-UbwUUos2Q",
+          "caption": ""
+        },
+        "bottomImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEjiBQQCAhgjS0vZNqB0e-Y0UYNb48C3YJ3Jj2SpnHyVHg0bfLEe3et-03VHRjA2gcUOEKqBT32yXYH4j7Zc7tyFRcrwc25AFSeRVav14wlQbfth9WpMqot66Z0CxY95vtAoonBTX00OPqkvZkxFgd13gtzRa8blusHs4sfpjbEIbtfvWinuOLADzlse-r8",
+          "caption": ""
+        }
+      },
+      "microwave-repair": {
+        "title": "Microwave Repair",
+        "tagline": "Won't heat, sparking, or won't turn on — we can help.",
+        "highlights": [
+          "Solo & convection",
+          "Same-day service",
+          "Affordable pricing",
+          "All brands"
+        ],
+        "shortDescription": "All types of microwave service and repair for solo, grill, and convection models.",
+        "detailedDescription": "We repair microwaves that won't heat or power on, spark inside the chamber, have a faulty turntable or door switch, or show display/control panel errors — across solo, grill, and convection models.",
+        "middleImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEjywfTvWAahG7Wp2YVz4WMXI-s5Al-lkRtzupUAb0giAelzGm44Nhl8XtjkR9yfxMob1wKgUCVh70d6njoFCsFffsbEuO7yn1L8nTRuN7Qk7rxO26P-US6bN_UNADqQQxniP27Xil4-odpaqsNRG6KePMjkGYDV8a3lc1rvnhwQxWY49wQE_GzZWen3alc",
+          "caption": ""
+        },
+        "bottomImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEidOdm7_l9YgfGHWqzhmIFx-uqflP5iOJf20rZN5lgFsaSEE2RjxB_E57HRvhkTENpvhMe0z90Je56LcFMKJF51prXpKxOzko70xQXq7mLecs-PuxCXR8aOEOFTwJDmgkvwlagXP60Ao4rBkvJW5SSJ95A9_eU9l3Ed4FksexzMOxoV8zbuOrbIhR1NkqQ",
+          "caption": ""
+        }
+      },
+      "led-tv-repair": {
+        "title": "LED & Smart TV Repair",
+        "tagline": "Screen, panel, and power issues fixed by certified electronics technicians.",
+        "highlights": [
+          "LED & Smart TVs",
+          "Panel & screen repair",
+          "Same-day service",
+          "All major brands"
+        ],
+        "shortDescription": "All types of LED and Smart TV service and repair, from power issues to panel faults.",
+        "detailedDescription": "Our technicians repair TVs that won't power on, show lines or a blank screen, have backlight or panel faults, sound issues, or smart-features/software problems — across major LED and Smart TV brands.",
+        "middleImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEg534ushbxjTHAMJUspb8BnGqMDEUorw31uDnDnQqUm7nCLpR7kUbv7YLmJ5_pyQbINpOws8QTROZ9TOgZM9x085m66GXmega7PDlk4gWr8rLuM32mwaYBHfN7oUIMzN8RzoIRP9dhEDmkSwUIiEHrtE9Kump_vJr_rjWSI7_OeBdoJBoHsFp_EX1JzgJE",
+          "caption": ""
+        },
+        "bottomImage": {
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEjIV2rdlFZW9ruRZV6p-TU-IDNzRbtW0DiHaloUgBH60TiVa5hZH1dYcCV-pXPcM04opRyZbkKW7nYEbaAKY5K1GxZm2kLtmvlFysaB7mtFEpJNJ8T7eO1OnXYfdxKRU0REn_Ru84dnbI4roMQqv9Q4Q5R5jT1rXHwreMxnzYn8xS-F2-703CKMYPUPsC4",
+          "caption": ""
+        }
+      }
+    }
+  }
+}
