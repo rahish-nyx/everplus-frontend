@@ -3,7 +3,7 @@
 // only ever talks to its own origin this way, so CORS never applies.
 // Override with VITE_API_BASE only for a production deployment where the
 // frontend and backend are on different hosts and there's no dev proxy.
-const API_BASE = import.meta.env.VITE_API_BASE || "";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://everplus-backend.onrender.com";
 const TOKEN_KEY = "everplus_admin_token";
 
 export function getAdminToken() {
