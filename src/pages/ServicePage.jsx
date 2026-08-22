@@ -1,90 +1,111 @@
+import { useEffect } from "react";
+import Layout from "../components/Layout.jsx";
+import { useSettings } from "../settingsContext.jsx";
 import { resolveAssetUrl } from "../api.js";
+import { whatsappBookingUrl, CALL_TEL } from "../whatsapp.js";
 
-const SERVICES = [
-  {
-    slug: "ac-repair",
-    title: "AC Repair",
-    href: "/services/ac-repair",
-    icon: "wrench",
-    description: "Diagnostics and repair for units that won't cool, trip breakers, or leak refrigerant."
-  },
-  {
-    slug: "washing-machine-repair",
-    title: "Washing Machine Repair",
-    href: "/services/washing-machine-repair",
-    icon: "wrench",
-    description: "Fix leaks, drum noise, drainage issues, and machines that won't spin or start."
-  },
-  {
-    slug: "refrigerator-repair",
-    title: "Refrigerator Repair Services",
-    href: "/services/refrigerator-repair",
-    icon: "wrench",
-    description: "Restore proper cooling, stop leaks, and fix compressor or thermostat failures."
-  },
-  {
-    slug: "microwave-repair",
-    title: "Microwave Repair",
-    href: "/services/microwave-repair",
-    icon: "wrench",
-    description: "Repairs for microwaves that won't heat, spark, or power on."
-  },
-  {
-    slug: "led-tv-repair",
-    title: "LED & Smart TV Repair",
-    href: "/services/led-tv-repair",
-    icon: "tv",
-    description: "Screen, panel, backlight, and power issues fixed by certified electronics technicians."
+export default function ServicePage({ slug }) {
+  const { settings } = useSettings();
+  const service = settings?.pages?.services?.[slug];
+
+  useEffect(() => {
+    if (service?.title) document.title = `${service.title} | EverPlus`;
+  }, [service]);
+
+  if (settings && !service) {
+    return (
+      <Layout>
+        <section className="page-hero">
+          <h1>Service Not Found</h1>
+          <p>
+            We couldn't find that service. <a href="/">Return home</a>.
+          </p>
+        </section>
+      </Layout>
+    );
   }
-];
 
-export default function ServiceGrid({ services }) {
   return (
-    <section className="service-section" id="services">
-      <div className="section-header">
-        <span className="section-kicker">What We Fix</span>
-        <h2>Appliance &amp; AC Repair Services Near You</h2>
-      </div>
-      <div className="service-grid">
-        {SERVICES.map((service) => {
-          const cardImage = services?.[service.slug]?.cardImage;
+    <Layout>
+      <section className="page-hero service-page-hero">
+        <span className="section-kicker">Service</span>
+        <h1>{service?.title || "Loading…"}</h1>
+        {service?.tagline ? <p>{service.tagline}</p> : null}
+      </section>
 
-          return (
-            <div className="service-card" key={service.title}>
-              {cardImage ? (
-                <div className="service-card-image">
-                  <img src={resolveAssetUrl(cardImage)} alt={service.title} />
-                </div>
-              ) : (
-                <div className="service-icon" aria-hidden="true">
-                  {service.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
-                </div>
-              )}
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <a href={service.href}>More →</a>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+      {service?.highlights?.length ? (
+        <section className="service-highlights">
+          {service.highlights.map((highlight) => (
+            <span className="highlight-chip" key={highlight}>
+              <CheckIcon /> {highlight}
+            </span>
+          ))}
+        </section>
+      ) : null}
+
+      {service ? (
+        <section className="page-content">
+          {service.shortDescription ? <p className="lead-paragraph">{service.shortDescription}</p> : null}
+
+          {service.middleImage?.url ? (
+            <figure className="service-single-image">
+              <img src={resolveAssetUrl(service.middleImage.url)} alt={service.middleImage.caption || service.title} />
+              {service.middleImage.caption ? <figcaption>{service.middleImage.caption}</figcaption> : null}
+            </figure>
+          ) : null}
+
+          {service.detailedDescription ? <p>{service.detailedDescription}</p> : null}
+        </section>
+      ) : null}
+
+      <section className="service-cta">
+        <div className="hero-cta-row">
+          <a className="primary-button hero-cta hero-cta-call" href={`tel:${CALL_TEL}`}>
+            <PhoneIcon /> Call Now
+          </a>
+          <a
+            className="primary-button hero-cta hero-cta-whatsapp"
+            href={whatsappBookingUrl(service?.title)}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <WhatsAppIcon /> WhatsApp
+          </a>
+        </div>
+      </section>
+
+      {service?.bottomImage?.url ? (
+        <section className="page-content">
+          <figure className="service-single-image">
+            <img src={resolveAssetUrl(service.bottomImage.url)} alt={service.bottomImage.caption || service.title} />
+            {service.bottomImage.caption ? <figcaption>{service.bottomImage.caption}</figcaption> : null}
+          </figure>
+        </section>
+      ) : null}
+    </Layout>
   );
 }
 
-function WrenchIcon() {
+function CheckIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+      <path d="M20 6 9 17l-5-5" />
     </svg>
   );
 }
 
-function TvIcon() {
+function PhoneIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="2" y="4" width="20" height="14" rx="2" />
-      <line x1="8" y1="21" x2="16" y2="21" />
-      <line x1="12" y1="18" x2="12" y2="21" />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.87 9.87 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.05c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.17-1.56-1.17-2.98s.73-2.11 1-2.4c.24-.27.53-.34.7-.34h.5c.16 0 .38-.03.58.44.24.55.79 1.93.86 2.07.07.14.11.31.02.5-.09.19-.14.31-.27.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.27.37-.22.62-.13.26.09 1.62.76 1.9.9.28.14.46.21.53.32.07.13.07.68-.17 1.35z" />
     </svg>
   );
 }

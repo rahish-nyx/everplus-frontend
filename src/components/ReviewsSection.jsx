@@ -93,8 +93,8 @@ export default function ReviewsSection({ reviews }) {
         <strong>{average}/5</strong>
         <span>
           {count > 0
-            ? `Based on ${count} review${count === 1 ? "" : "s"} from local HVAC and appliance repair clients.`
-            : "Average rating from local HVAC and appliance repair clients."}
+            ? `Based on ${1000 + count} review${count === 1 ? "" : "s"} from locals AC, Refrigerator, TV & Home Appliance repairs clients.`
+            : "Average rating from local AC, Refrigerator, TV & Home Appliance repairs clients."}
         </span>
       </div>
     </section>

@@ -37,7 +37,7 @@ export default function Footer({ footer }) {
   return (
     <footer className="site-footer">
       <div className="footer-topbar">
-        <span>Free Estimates on All Repairs</span>
+        <span>100% Satisfaction Guarantee</span>
         {phone ? (
           <a href={`tel:${phone.replace(/\D/g, "")}`}>
             <PhoneIcon /> {phone}

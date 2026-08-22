@@ -12,8 +12,8 @@ const NAV_LINKS = [
   { label: "LED & Smart TV Repair", href: "/services/led-tv-repair" }
 ];
 
-const PHONE_DISPLAY = "(786) 913-0336";
-const PHONE_TEL = "+17869130336";
+const PHONE_DISPLAY = "77250 97277";
+const PHONE_TEL = "+917725097277";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="utility-bar">
-        <span>Same-day appliance &amp; AC repair — licensed technicians</span>
+        <span>Reliable home appliance repair at your doorstep — private, independent, and trusted home appliance repair service.</span>
         <a className="header-phone-link" href={`tel:${PHONE_TEL}`}>
           <PhoneIcon /> Call/Text {PHONE_DISPLAY}
         </a>

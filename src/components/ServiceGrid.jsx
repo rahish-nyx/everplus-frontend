@@ -33,7 +33,7 @@ const SERVICES = [
     slug: "led-tv-repair",
     title: "LED & Smart TV Repair",
     href: "/services/led-tv-repair",
-    icon: "tv",
+    icon: "wrench",
     description: "Screen, panel, backlight, and power issues fixed by certified electronics technicians."
   }
 ];

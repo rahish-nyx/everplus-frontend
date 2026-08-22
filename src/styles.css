@@ -39,7 +39,7 @@ select {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 80;
   box-shadow: 0 8px 28px rgba(0, 27, 61, 0.12);
 }
 
@@ -877,10 +877,13 @@ select:focus {
     flex-direction: column;
     gap: 0;
     left: 0;
+    max-height: calc(100vh - 66px);
+    overflow-y: auto;
     padding: 12px 18px 18px;
     position: absolute;
     right: 0;
     top: 66px;
+    z-index: 70;
   }
 
   .nav-links.is-open {
@@ -1296,16 +1299,18 @@ a.contact-row:hover {
 /* ---- Service card image (homepage "What We Fix") ---- */
 
 .service-card-image {
-  border-radius: 8px;
-  height: 140px;
+  background: var(--soft);
+  border-radius: 8px 8px 0 0;
+  height: 230px;
+  margin: 0 -26px 16px;
   overflow: hidden;
-  margin-bottom: 4px;
 }
 
 .service-card-image img {
   display: block;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   width: 100%;
 }
 
@@ -1417,6 +1422,9 @@ a.contact-row:hover {
 
 .reviews-toggle {
   margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .review-form {
