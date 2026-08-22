@@ -6,8 +6,8 @@ export default function BrandLogos({ logos }) {
   return (
     <section className="brand-logos-section">
       <div className="section-header">
-        <span className="section-kicker">Trusted Brands</span>
-        <h2>Authorized Dealers of Leading Brands</h2>
+        <span className="section-kicker">Brands We Service</span>
+        <h2>Professional Service for Leading Brands</h2>
       </div>
       <div className="brand-logos-grid">
         {logos.map((logo) => (

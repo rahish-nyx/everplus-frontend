@@ -120,5 +120,8 @@ export async function uploadImage(file) {
 export function resolveAssetUrl(url) {
   if (!url) return "";
   if (/^https?:\/\//i.test(url)) return url;
+  if (url.startsWith("/images/") || url.startsWith("images/")) {
+    return url.startsWith("/") ? url : `/${url}`;
+  }
   return `${API_BASE}${url}`;
 }
