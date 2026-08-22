@@ -14,11 +14,16 @@ import {
   updateGeneralSettings,
   updateHeroSlides,
   updateLeadStatus,
-  updateServicesSettings
+  updateServicesSettings,
+  updateReviewsSettings,
+  getAdminRatings,
+  setRatingApproved,
+  deleteRating
 } from "../api.js";
 
 const TABS = [
   { id: "leads", label: "Leads" },
+  { id: "ratings", label: "Ratings" },
   { id: "general", label: "Offer & SEO" },
   { id: "hero", label: "Hero Slides" },
   { id: "brands", label: "Brand Logos" },
@@ -26,7 +31,8 @@ const TABS = [
   { id: "about", label: "About Page" },
   { id: "contact", label: "Contact Page" },
   { id: "faq", label: "FAQ" },
-  { id: "services", label: "Services" }
+  { id: "services", label: "Services" },
+  { id: "reviews", label: "Reviews Section" }
 ];
 
 const DEFAULT_SEO = { title: "", description: "", keywords: "" };
@@ -54,6 +60,8 @@ const DEFAULT_CONTACT = { intro: "", whatsappNumber: "", hours: "", image: { url
 
 const DEFAULT_FAQ_ITEMS = [];
 
+const DEFAULT_REVIEWS = { sectionTitle: "Homeowner Approved", sectionSubtitle: "", averageOverride: "" };
+
 const SERVICE_SLUGS = [
   { slug: "ac-repair", label: "AC Repair" },
   { slug: "washing-machine-repair", label: "Washing Machine Repair" },
@@ -68,6 +76,7 @@ const EMPTY_SERVICE = {
   highlights: [],
   shortDescription: "",
   detailedDescription: "",
+  cardImage: "",
   middleImage: { url: "", caption: "" },
   bottomImage: { url: "", caption: "" }
 };
@@ -168,6 +177,7 @@ function AdminShell({ onLogout }) {
 
       <main className="admin-main">
         {activeTab === "leads" ? <LeadsPanel /> : null}
+        {activeTab === "ratings" ? <RatingsPanel /> : null}
         {activeTab === "general" && settings ? (
           <GeneralPanel
             settings={{ currentOffer: settings.currentOffer || "", seo: settings.seo || DEFAULT_SEO }}
@@ -194,6 +204,9 @@ function AdminShell({ onLogout }) {
         ) : null}
         {activeTab === "services" && settings ? (
           <ServicesPanel services={settings.pages?.services || {}} onSaved={refreshSettings} />
+        ) : null}
+        {activeTab === "reviews" && settings ? (
+          <ReviewsPanel reviews={settings.pages?.reviews || DEFAULT_REVIEWS} onSaved={refreshSettings} />
         ) : null}
       </main>
     </div>
@@ -245,6 +258,8 @@ function LeadsPanel() {
               <tr>
                 <th>Name</th>
                 <th>Phone</th>
+                <th>Email</th>
+                <th>Location</th>
                 <th>Service</th>
                 <th>Status</th>
                 <th>Received</th>
@@ -256,6 +271,8 @@ function LeadsPanel() {
                 <tr key={lead.id}>
                   <td>{lead.name}</td>
                   <td>{lead.phone}</td>
+                  <td>{lead.email || "—"}</td>
+                  <td>{lead.location || "—"}</td>
                   <td>{lead.serviceType}</td>
                   <td>
                     <select value={lead.status} onChange={(e) => handleStatus(lead.id, e.target.value)}>
@@ -270,6 +287,89 @@ function LeadsPanel() {
                       Call
                     </a>
                     <button className="delete-button" type="button" onClick={() => handleDelete(lead.id)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </>
+  );
+}
+
+// ---------------- Ratings ----------------
+
+function RatingsPanel() {
+  const [ratings, setRatings] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const load = () => {
+    setLoading(true);
+    getAdminRatings()
+      .then((data) => setRatings(data.ratings))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(load, []);
+
+  const handleApprove = async (id, approved) => {
+    await setRatingApproved(id, approved);
+    load();
+  };
+
+  const handleDelete = async (id) => {
+    await deleteRating(id);
+    load();
+  };
+
+  return (
+    <>
+      <div className="admin-topline">
+        <h1>Ratings</h1>
+        <button className="ghost-button" type="button" onClick={load}>
+          Refresh
+        </button>
+      </div>
+
+      <div className="lead-table-wrap">
+        {loading ? (
+          <p className="empty-state">Loading ratings…</p>
+        ) : ratings.length === 0 ? (
+          <p className="empty-state">No ratings yet.</p>
+        ) : (
+          <table className="lead-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Stars</th>
+                <th>Review</th>
+                <th>Status</th>
+                <th>Received</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ratings.map((r) => (
+                <tr key={r.id}>
+                  <td>{r.name}</td>
+                  <td>{"★".repeat(r.stars)}{"☆".repeat(5 - r.stars)}</td>
+                  <td>{r.text || "—"}</td>
+                  <td>{r.approved ? "Visible" : "Hidden"}</td>
+                  <td>{new Date(r.createdAt).toLocaleString()}</td>
+                  <td className="table-actions">
+                    {r.approved ? (
+                      <button className="ghost-button" type="button" onClick={() => handleApprove(r.id, false)}>
+                        Hide
+                      </button>
+                    ) : (
+                      <button className="call-button" type="button" onClick={() => handleApprove(r.id, true)}>
+                        Approve
+                      </button>
+                    )}
+                    <button className="delete-button" type="button" onClick={() => handleDelete(r.id)}>
                       Delete
                     </button>
                   </td>
@@ -422,7 +522,7 @@ function HeroSlidesPanel({ slides, onSaved }) {
               placeholder="Paste an image URL (https://...)"
             />
           </label>
-          {slide.image ? <img src={slide.image} alt="" style={{ maxWidth: "180px", borderRadius: "6px" }} /> : null}
+          {slide.image ? <img src={slide.image.startsWith("http") ? slide.image : slide.image} alt="" style={{ maxWidth: "180px", borderRadius: "6px" }} /> : null}
           <button className="delete-button" type="button" onClick={() => removeSlide(index)}>
             Remove Slide
           </button>
@@ -886,6 +986,59 @@ function FaqPanel({ items, onSaved }) {
   );
 }
 
+// ---------------- Reviews Section ----------------
+
+function ReviewsPanel({ reviews, onSaved }) {
+  const [form, setForm] = useState({ ...DEFAULT_REVIEWS, ...(reviews || {}) });
+  const [status, setStatus] = useState("");
+
+  const handleSave = async () => {
+    setStatus("Saving…");
+    try {
+      await updateReviewsSettings(form);
+      setStatus("Saved.");
+      onSaved();
+    } catch (err) {
+      setStatus(err.message);
+    }
+  };
+
+  return (
+    <>
+      <div className="admin-topline">
+        <h1>Reviews Section</h1>
+      </div>
+
+      {status ? <p className="form-success">{status}</p> : null}
+      <p style={{ color: "var(--muted)", fontSize: "0.86rem" }}>
+        Approve or hide individual reviews from the Ratings tab. This tab only controls the section heading and the
+        displayed average rating.
+      </p>
+
+      <div className="offer-manager" style={{ flexDirection: "column", alignItems: "stretch", gap: "12px" }}>
+        <label>
+          Section Title
+          <input value={form.sectionTitle} onChange={(e) => setForm({ ...form, sectionTitle: e.target.value })} />
+        </label>
+        <label>
+          Section Subtitle
+          <input value={form.sectionSubtitle} onChange={(e) => setForm({ ...form, sectionSubtitle: e.target.value })} />
+        </label>
+        <label>
+          Average Rating Override (leave blank to auto-calculate from approved reviews)
+          <input value={form.averageOverride} onChange={(e) => setForm({ ...form, averageOverride: e.target.value })} placeholder="e.g. 4.9" />
+        </label>
+      </div>
+
+      <div style={{ marginTop: "18px" }}>
+        <button className="primary-button" type="button" onClick={handleSave}>
+          Save Reviews Section
+        </button>
+      </div>
+    </>
+  );
+}
+
 // ---------------- Services ----------------
 
 function ServicesPanel({ services, onSaved }) {
@@ -987,6 +1140,21 @@ function ServicesPanel({ services, onSaved }) {
       <button className="ghost-button" type="button" onClick={addHighlight}>
         + Add Highlight
       </button>
+
+      <h3>Card Image (shown on the homepage "What We Fix" card)</h3>
+      <div className="offer-manager" style={{ flexDirection: "column", alignItems: "stretch", gap: "10px" }}>
+        <label>
+          Image Link
+          <input
+            value={current.cardImage}
+            onChange={(e) => updateCurrent({ cardImage: e.target.value })}
+            placeholder="Paste an image URL (https://...)"
+          />
+        </label>
+        {current.cardImage ? (
+          <img src={current.cardImage} alt="" style={{ maxWidth: "220px", borderRadius: "6px" }} />
+        ) : null}
+      </div>
 
       <h3>Middle Image (shown in the middle of the page)</h3>
       <div className="offer-manager" style={{ flexDirection: "column", alignItems: "stretch", gap: "10px" }}>

@@ -1,12 +1,21 @@
-import { ClipboardCheck } from "lucide-react";
 import { useState } from "react";
-import { apiFetch } from "../api.js";
+import { createLead } from "../api.js";
 
 const initialForm = {
   name: "",
   phone: "",
+  email: "",
+  location: "",
   serviceType: ""
 };
+
+const SERVICE_OPTIONS = [
+  "AC Repair",
+  "Washing Machine Repair",
+  "Refrigerator Repair",
+  "Microwave Repair",
+  "LED & Smart TV Repair"
+];
 
 export default function LeadForm() {
   const [form, setForm] = useState(initialForm);
@@ -24,7 +33,7 @@ export default function LeadForm() {
     setMessage("");
 
     if (!form.name.trim() || !form.phone.trim() || !form.serviceType) {
-      setError("Please fill out every field.");
+      setError("Please fill out name, phone, and service type.");
       return;
     }
 
@@ -36,10 +45,9 @@ export default function LeadForm() {
     setSubmitting(true);
 
     try {
-      await apiFetch("/api/leads", {
-        method: "POST",
-        body: JSON.stringify(form)
-      });
+      // createLead already handles JSON.stringify internally via apiFetch —
+      // never stringify the body yourself before passing it in.
+      await createLead(form);
       setForm(initialForm);
       setMessage("Thanks. EverPlus will call you shortly.");
     } catch (submitError) {
@@ -50,38 +58,59 @@ export default function LeadForm() {
   }
 
   return (
-    <form className="lead-card" onSubmit={handleSubmit}>
+    <form className="lead-card" id="lead-form" onSubmit={handleSubmit}>
       <div className="form-heading">
-        <ClipboardCheck size={24} />
+        <ClipboardIcon />
         <div>
           <h3>Get a Free Quote</h3>
           <p>Priority scheduling for today and tomorrow.</p>
         </div>
       </div>
+
       <label>
         Name
         <input name="name" value={form.name} onChange={updateField} placeholder="Your name" required />
       </label>
       <label>
         Phone
-        <input name="phone" value={form.phone} onChange={updateField} placeholder="(555) 123-4567" required />
+        <input name="phone" type="tel" value={form.phone} onChange={updateField} placeholder="98765 43210" required />
+      </label>
+      <label>
+        Email (optional)
+        <input name="email" type="email" value={form.email} onChange={updateField} placeholder="you@example.com" />
+      </label>
+      <label>
+        Location
+        <input name="location" value={form.location} onChange={updateField} placeholder="Area / city" />
       </label>
       <label>
         Service Type
         <select name="serviceType" value={form.serviceType} onChange={updateField} required>
           <option value="">Choose a service</option>
-          <option>Heating</option>
-          <option>Cooling</option>
-          <option>Plumbing</option>
-          <option>Electrical</option>
-          <option>Emergency Repair</option>
+          {SERVICE_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
       </label>
-      {error && <p className="form-error">{error}</p>}
-      {message && <p className="form-success">{message}</p>}
+
+      {error ? <p className="form-error">{error}</p> : null}
+      {message ? <p className="form-success">{message}</p> : null}
+
       <button className="primary-button" type="submit" disabled={submitting}>
-        {submitting ? "Sending..." : "Get Free Quote"}
+        {submitting ? "Sending…" : "Get Free Quote"}
       </button>
     </form>
+  );
+}
+
+function ClipboardIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <path d="m9 14 2 2 4-4" />
+    </svg>
   );
 }

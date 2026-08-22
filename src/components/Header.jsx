@@ -12,8 +12,8 @@ const NAV_LINKS = [
   { label: "LED & Smart TV Repair", href: "/services/led-tv-repair" }
 ];
 
-const PHONE_DISPLAY = "+91 7725097277";
-const PHONE_TEL = "7725097277";
+const PHONE_DISPLAY = "(786) 913-0336";
+const PHONE_TEL = "+17869130336";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,12 +53,12 @@ export default function Header() {
 
         <button
           type="button"
-          className="menu-button"
-          aria-label="Toggle navigation menu"
+          className="menu-button all-services-button"
+          aria-label="Toggle all services menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <MenuIcon />
+          <span className="all-services-text">ALL SERVICES</span>
         </button>
       </div>
     </header>
@@ -81,12 +81,3 @@ function WhatsAppIcon() {
   );
 }
 
-function MenuIcon() {
-  return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="3" y1="6" x2="21" y2="6" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <line x1="3" y1="18" x2="21" y2="18" />
-    </svg>
-  );
-}

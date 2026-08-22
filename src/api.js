@@ -61,6 +61,10 @@ export async function apiFetch(path, options = {}) {
 export const getSettings = () => apiFetch("/api/settings");
 export const createLead = (lead) => apiFetch("/api/leads", { method: "POST", body: lead });
 
+// ---- Public: ratings ----
+export const getRatings = () => apiFetch("/api/ratings");
+export const submitRating = (rating) => apiFetch("/api/ratings", { method: "POST", body: rating });
+
 // ---- Admin auth ----
 export const adminLogin = (password) =>
   apiFetch("/api/admin/login", { method: "POST", body: { password } });
@@ -71,6 +75,13 @@ export const updateLeadStatus = (id, status) =>
   apiFetch(`/api/admin/leads/${id}`, { method: "PATCH", auth: true, body: { status } });
 export const deleteLead = (id) =>
   apiFetch(`/api/admin/leads/${id}`, { method: "DELETE", auth: true });
+
+// ---- Admin: ratings moderation ----
+export const getAdminRatings = () => apiFetch("/api/admin/ratings", { auth: true });
+export const setRatingApproved = (id, approved) =>
+  apiFetch(`/api/admin/ratings/${id}`, { method: "PATCH", auth: true, body: { approved } });
+export const deleteRating = (id) =>
+  apiFetch(`/api/admin/ratings/${id}`, { method: "DELETE", auth: true });
 
 // ---- Admin: settings ----
 export const updateGeneralSettings = (payload) =>
@@ -96,6 +107,9 @@ export const updateFaqSettings = (items) =>
 
 export const updateServicesSettings = (services) =>
   apiFetch("/api/admin/settings/services", { method: "PUT", auth: true, body: { services } });
+
+export const updateReviewsSettings = (reviews) =>
+  apiFetch("/api/admin/settings/reviews", { method: "PUT", auth: true, body: { reviews } });
 
 export async function uploadImage(file) {
   const form = new FormData();

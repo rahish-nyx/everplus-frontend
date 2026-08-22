@@ -239,21 +239,23 @@ select {
 }
 
 .hero-photo {
+  aspect-ratio: 4 / 3;
+  background: rgba(0, 16, 39, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   box-shadow: 0 18px 52px rgba(0, 16, 39, 0.3);
   margin-top: 28px;
   max-width: 620px;
-  min-height: 190px;
   overflow: hidden;
   position: relative;
   align-self: center;
+  width: 100%;
 }
 
 .hero-photo img {
   display: block;
-  height: 320px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 }
@@ -265,7 +267,7 @@ select {
   display: flex;
   font-size: 1.4rem;
   font-weight: 800;
-  height: 320px;
+  height: 100%;
   justify-content: center;
   text-align: center;
   padding: 20px;
@@ -1251,5 +1253,264 @@ a.contact-row:hover {
 @media (max-width: 1040px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================================================
+   New additions: dual hero CTAs, service card images, lead popup,
+   reviews, sticky mobile contact bar, neon "ALL SERVICES" button
+   ================================================================== */
+
+/* ---- Hero dual Call/WhatsApp buttons ---- */
+
+.hero-carousel {
+  touch-action: pan-y;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-cta {
+  padding: 14px 22px;
+}
+
+.hero-cta-call {
+  background: var(--navy);
+}
+
+.hero-cta-call:hover {
+  background: var(--navy-dark);
+}
+
+.hero-cta-whatsapp {
+  background: #25d366;
+}
+
+.hero-cta-whatsapp:hover {
+  background: #1fb955;
+}
+
+/* ---- Service card image (homepage "What We Fix") ---- */
+
+.service-card-image {
+  border-radius: 8px;
+  height: 140px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.service-card-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ---- Lead capture pop-up ---- */
+
+.lead-popup-backdrop {
+  align-items: center;
+  background: rgba(0, 20, 40, 0.6);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  z-index: 100;
+}
+
+.lead-popup-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0, 16, 39, 0.4);
+  max-width: 420px;
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.lead-popup-close {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  position: absolute;
+  right: 14px;
+  top: 10px;
+}
+
+.lead-popup-card h3 {
+  color: var(--navy);
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.lead-popup-date {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 16px;
+}
+
+.lead-popup-card form {
+  display: grid;
+  gap: 12px;
+}
+
+.lead-popup-success {
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.lead-popup-success h3 {
+  margin: 0;
+}
+
+/* ---- Reviews section additions ---- */
+
+.reviews-list {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.review-item {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.review-item-stars {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.review-item p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.star-row {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star-picker {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.star-picker-button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.reviews-toggle {
+  margin-top: 18px;
+}
+
+.review-form {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 18px;
+}
+
+/* ---- Sticky mobile/tablet Call + WhatsApp bar ---- */
+
+.sticky-contact-bar {
+  display: none;
+}
+
+.sticky-contact-button {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  flex: 1;
+  font-weight: 900;
+  gap: 8px;
+  justify-content: center;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.sticky-call {
+  background: var(--navy);
+}
+
+.sticky-whatsapp {
+  background: #25d366;
+}
+
+/* ---- Neon "ALL SERVICES" mobile button ---- */
+
+.all-services-button {
+  display: none;
+}
+
+.all-services-text {
+  background: var(--navy);
+  border: 2px solid #39ff9c;
+  border-radius: 999px;
+  box-shadow: 0 0 6px #39ff9c, 0 0 14px rgba(57, 255, 156, 0.6), inset 0 0 8px rgba(57, 255, 156, 0.35);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding: 9px 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---- Mobile / tablet breakpoint (up to tablet width) ---- */
+
+@media (max-width: 1024px) {
+  .sticky-contact-bar {
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 60;
+    box-shadow: 0 -6px 20px rgba(0, 16, 39, 0.25);
+  }
+
+  body {
+    padding-bottom: 54px;
+  }
+
+  .all-services-button {
+    background: transparent;
+    border: 0;
+    display: inline-flex;
+    padding: 0;
+  }
+
+  .menu-button:not(.all-services-button) {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-cta-row {
+    flex-direction: column;
+  }
+
+  .hero-cta {
+    justify-content: center;
+    width: 100%;
   }
 }

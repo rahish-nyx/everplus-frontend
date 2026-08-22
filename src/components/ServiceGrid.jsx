@@ -1,29 +1,36 @@
+import { resolveAssetUrl } from "../api.js";
+
 const SERVICES = [
   {
+    slug: "ac-repair",
     title: "AC Repair",
     href: "/services/ac-repair",
     icon: "wrench",
     description: "Diagnostics and repair for units that won't cool, trip breakers, or leak refrigerant."
   },
   {
+    slug: "washing-machine-repair",
     title: "Washing Machine Repair",
     href: "/services/washing-machine-repair",
     icon: "wrench",
     description: "Fix leaks, drum noise, drainage issues, and machines that won't spin or start."
   },
   {
+    slug: "refrigerator-repair",
     title: "Refrigerator Repair Services",
     href: "/services/refrigerator-repair",
     icon: "wrench",
     description: "Restore proper cooling, stop leaks, and fix compressor or thermostat failures."
   },
   {
+    slug: "microwave-repair",
     title: "Microwave Repair",
     href: "/services/microwave-repair",
     icon: "wrench",
     description: "Repairs for microwaves that won't heat, spark, or power on."
   },
   {
+    slug: "led-tv-repair",
     title: "LED & Smart TV Repair",
     href: "/services/led-tv-repair",
     icon: "tv",
@@ -31,7 +38,7 @@ const SERVICES = [
   }
 ];
 
-export default function ServiceGrid() {
+export default function ServiceGrid({ services }) {
   return (
     <section className="service-section" id="services">
       <div className="section-header">
@@ -39,16 +46,26 @@ export default function ServiceGrid() {
         <h2>Appliance &amp; AC Repair Services Near You</h2>
       </div>
       <div className="service-grid">
-        {SERVICES.map((service) => (
-          <div className="service-card" key={service.title}>
-            <div className="service-icon" aria-hidden="true">
-              {service.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
+        {SERVICES.map((service) => {
+          const cardImage = services?.[service.slug]?.cardImage;
+
+          return (
+            <div className="service-card" key={service.title}>
+              {cardImage ? (
+                <div className="service-card-image">
+                  <img src={resolveAssetUrl(cardImage)} alt={service.title} />
+                </div>
+              ) : (
+                <div className="service-icon" aria-hidden="true">
+                  {service.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
+                </div>
+              )}
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <a href={service.href}>More →</a>
             </div>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <a href={service.href}>Learn more →</a>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
 import ServiceGrid from "../components/ServiceGrid.jsx";
 import BrandLogos from "../components/BrandLogos.jsx";
+import ReviewsSection from "../components/ReviewsSection.jsx";
 import { useSettings } from "../settingsContext.jsx";
 
 function setMeta(name, content, attr = "name") {
@@ -35,18 +36,9 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero slides={settings?.heroSlides} currentOffer={settings?.currentOffer} />
-      <ServiceGrid />
+      <ServiceGrid services={settings?.pages?.services} />
       <BrandLogos logos={settings?.brandLogos} />
-      <section className="reviews-band" id="reviews">
-        <div>
-          <span className="section-kicker">Homeowner Approved</span>
-          <h2>Fast answers, clean work, and no surprise pricing.</h2>
-        </div>
-        <div className="review-summary">
-          <strong>4.9/5</strong>
-          <span>Average rating from local HVAC and appliance repair clients.</span>
-        </div>
-      </section>
+      <ReviewsSection reviews={settings?.pages?.reviews} />
     </Layout>
   );
 }
