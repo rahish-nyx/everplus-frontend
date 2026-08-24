@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout.jsx";
 import { useSettings } from "../settingsContext.jsx";
+import { applyPageMeta } from "../seo.js";
 
 export default function ContactPage() {
   const { settings } = useSettings();
@@ -8,8 +9,8 @@ export default function ContactPage() {
   const footer = settings?.footer;
 
   useEffect(() => {
-    document.title = "Contact Us | EverPlus";
-  }, []);
+    applyPageMeta("Contact Us | EverPlus", contact?.intro);
+  }, [contact]);
 
   const phone = footer?.phone || "";
   const email = footer?.email || "";

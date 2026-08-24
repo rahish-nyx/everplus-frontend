@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout.jsx";
 import { useSettings } from "../settingsContext.jsx";
+import { applyPageMeta } from "../seo.js";
 
 export default function AboutPage() {
   const { settings } = useSettings();
   const about = settings?.pages?.about;
 
   useEffect(() => {
-    if (about?.heading) document.title = `${about.heading} | EverPlus`;
+    if (about?.heading) applyPageMeta(`${about.heading} | EverPlus`, about.intro);
   }, [about]);
 
   return (

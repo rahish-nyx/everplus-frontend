@@ -1301,7 +1301,7 @@ a.contact-row:hover {
 .service-card-image {
   background: var(--soft);
   border-radius: 8px 8px 0 0;
-  height: 230px;
+  height: 190px;
   margin: 0 -26px 16px;
   overflow: hidden;
 }
@@ -1422,9 +1422,6 @@ a.contact-row:hover {
 
 .reviews-toggle {
   margin-top: 18px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
 }
 
 .review-form {
@@ -1520,5 +1517,88 @@ a.contact-row:hover {
   .hero-cta {
     justify-content: center;
     width: 100%;
+  }
+}
+
+/* ---- Other Services (swipeable row on each service page) ---- */
+
+.other-services-section {
+  padding: clamp(40px, 6vw, 72px) clamp(18px, 5vw, 72px) clamp(60px, 8vw, 90px);
+}
+
+.other-services-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.other-services-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.other-services-row::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.other-service-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  flex: 0 0 auto;
+  padding: 26px;
+  scroll-snap-align: start;
+  transition: border 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  width: 260px;
+}
+
+.other-service-card:hover {
+  border-color: rgba(255, 140, 0, 0.56);
+  box-shadow: 0 18px 44px rgba(0, 51, 102, 0.14);
+  transform: translateY(-4px);
+}
+
+.other-service-card-image {
+  background: var(--soft);
+  border-radius: 8px 8px 0 0;
+  height: 160px;
+  margin: -26px -26px 16px;
+  overflow: hidden;
+}
+
+.other-service-card-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.other-service-card h3 {
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin: 16px 0 8px;
+}
+
+.other-service-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.other-service-more {
+  color: var(--orange-dark);
+  display: inline-block;
+  font-weight: 900;
+  margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .other-service-card {
+    width: 220px;
   }
 }

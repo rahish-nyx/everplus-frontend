@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import Layout from "../components/Layout.jsx";
 import { useSettings } from "../settingsContext.jsx";
 import { resolveAssetUrl } from "../api.js";
+import { applyPageMeta } from "../seo.js";
 import { whatsappBookingUrl, CALL_TEL } from "../whatsapp.js";
+import { SERVICES, WrenchIcon, TvIcon } from "../components/ServiceGrid.jsx";
 
 export default function ServicePage({ slug }) {
   const { settings } = useSettings();
   const service = settings?.pages?.services?.[slug];
 
   useEffect(() => {
-    if (service?.title) document.title = `${service.title} | EverPlus`;
+    if (service?.title) applyPageMeta(`${service.title} | EverPlus`, service.shortDescription || service.tagline);
   }, [service]);
 
   if (settings && !service) {
@@ -80,6 +82,36 @@ export default function ServicePage({ slug }) {
             <img src={resolveAssetUrl(service.bottomImage.url)} alt={service.bottomImage.caption || service.title} />
             {service.bottomImage.caption ? <figcaption>{service.bottomImage.caption}</figcaption> : null}
           </figure>
+        </section>
+      ) : null}
+
+      {service ? (
+        <section className="other-services-section">
+          <div className="section-header">
+            <span className="section-kicker">Other Services</span>
+          </div>
+          <div className="other-services-row">
+            {SERVICES.filter((item) => item.slug !== slug).map((item) => {
+              const cardImage = settings?.pages?.services?.[item.slug]?.cardImage;
+
+              return (
+                <a className="other-service-card" href={item.href} key={item.slug}>
+                  {cardImage ? (
+                    <div className="other-service-card-image">
+                      <img src={resolveAssetUrl(cardImage)} alt={item.title} />
+                    </div>
+                  ) : (
+                    <div className="service-icon" aria-hidden="true">
+                      {item.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
+                    </div>
+                  )}
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <span className="other-service-more">More →</span>
+                </a>
+              );
+            })}
+          </div>
         </section>
       ) : null}
     </Layout>

@@ -1,13 +1,17 @@
 import { useEffect } from "react";
 import Layout from "../components/Layout.jsx";
 import { useSettings } from "../settingsContext.jsx";
+import { applyPageMeta } from "../seo.js";
 
 export default function FaqPage() {
   const { settings } = useSettings();
   const items = settings?.pages?.faq?.items || [];
 
   useEffect(() => {
-    document.title = "FAQ | EverPlus";
+    applyPageMeta(
+      "FAQ | EverPlus",
+      "Answers to common questions about EverPlus appliance and AC repair — scheduling, pricing, service areas, and more."
+    );
   }, []);
 
   return (
