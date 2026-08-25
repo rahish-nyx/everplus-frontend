@@ -14,6 +14,26 @@ export default function FaqPage() {
     );
   }, []);
 
+  if (!settings) {
+    return (
+      <Layout>
+        <section className="page-hero">
+          <span className="section-kicker">Have Questions?</span>
+          <div
+            className="skeleton-block"
+            style={{ height: "42px", width: "min(460px, 60%)", background: "rgba(255,255,255,0.14)" }}
+          />
+        </section>
+
+        <section className="faq-list">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className="skeleton-block" style={{ height: "54px", width: "100%" }} />
+          ))}
+        </section>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <section className="page-hero">

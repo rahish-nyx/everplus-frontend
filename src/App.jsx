@@ -5,10 +5,12 @@ import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import FaqPage from "./pages/FaqPage.jsx";
 import ServicePage from "./pages/ServicePage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function resolvePage(pathname) {
   const path = pathname.replace(/\/+$/, "") || "/";
 
+  if (path === "/") return <HomePage />;
   if (path === "/about") return <AboutPage />;
   if (path === "/contact") return <ContactPage />;
   if (path === "/faq") return <FaqPage />;
@@ -16,7 +18,7 @@ function resolvePage(pathname) {
   const serviceMatch = path.match(/^\/services\/([a-z0-9-]+)$/);
   if (serviceMatch) return <ServicePage slug={serviceMatch[1]} />;
 
-  return <HomePage />;
+  return <NotFoundPage />;
 }
 
 export default function App() {

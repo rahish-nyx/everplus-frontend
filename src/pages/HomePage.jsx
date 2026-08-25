@@ -37,7 +37,13 @@ export default function HomePage() {
     <Layout>
       <Hero slides={settings?.heroSlides} currentOffer={settings?.currentOffer} />
       <ServiceGrid services={settings?.pages?.services} />
-      <BrandLogos logos={settings?.brandLogos} />
+      {/* loading={!settings}: BrandLogos returns null while empty, which is
+          also true during the loading state — this tells it to show a
+          skeleton instead of disappearing until settings actually arrives. */}
+      <BrandLogos logos={settings?.brandLogos} loading={!settings} />
+      {/* ReviewsSection fetches its own ratings data independently of
+          settings, so it tracks its own loading state internally —
+          no prop needed here. */}
       <ReviewsSection reviews={settings?.pages?.reviews} />
     </Layout>
   );

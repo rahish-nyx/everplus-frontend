@@ -12,6 +12,73 @@
   color: var(--ink);
 }
 
+/* ==================================================================
+   Shimmer loading effects — image placeholders + page skeletons
+   ================================================================== */
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* ---- Image shimmer (used by ShimmerImage.jsx) ---- */
+
+.shimmer-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--soft);
+  width: 100%;
+  height: 100%;
+}
+
+.shimmer-wrap.is-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--soft) 0%, #e4ecf4 20%, var(--soft) 40%);
+  background-size: 800px 100%;
+  animation: shimmer-sweep 1.4s linear infinite;
+  z-index: 1;
+}
+
+.shimmer-wrap img {
+  opacity: 0;
+  transition: opacity 240ms ease;
+  position: relative;
+  z-index: 2;
+}
+
+.shimmer-wrap img.is-loaded {
+  opacity: 1;
+}
+
+/* ---- Page-level skeleton blocks ---- */
+
+.skeleton-block {
+  background: linear-gradient(90deg, var(--soft) 0%, #e4ecf4 20%, var(--soft) 40%);
+  background-size: 800px 100%;
+  animation: shimmer-sweep 1.4s linear infinite;
+  border-radius: 8px;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-text.is-wide {
+  width: 70%;
+}
+
+.skeleton-text.is-narrow {
+  width: 40%;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -1602,3 +1669,4 @@ a.contact-row:hover {
     width: 220px;
   }
 }
+

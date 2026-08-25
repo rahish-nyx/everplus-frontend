@@ -11,7 +11,7 @@ export default function ReviewsSection({ reviews }) {
   const load = () => {
     getRatings()
       .then(setData)
-      .catch(() => {});
+      .catch(() => setData({ ratings: [], average: null, count: 0 }));
   };
 
   useEffect(load, []);
@@ -37,6 +37,35 @@ export default function ReviewsSection({ reviews }) {
       setStatus("idle");
     }
   };
+
+  // data is null only until the /api/ratings call resolves (success or
+  // failure) — this is independent of the settings context, since this
+  // section fetches its own data. Show a skeleton instead of nothing so
+  // the section doesn't suddenly pop into existence.
+  if (data === null) {
+    return (
+      <section className="reviews-band" id="reviews">
+        <div>
+          <span className="skeleton-block skeleton-text is-narrow" style={{ display: "inline-block", height: "16px", width: "140px" }} />
+          <div className="skeleton-block" style={{ height: "34px", width: "80%", margin: "10px 0 24px", borderRadius: "6px" }} />
+
+          <div className="reviews-list">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div className="review-item" key={index}>
+                <div className="skeleton-block" style={{ height: "16px", width: "120px", marginBottom: "8px" }} />
+                <div className="skeleton-block" style={{ height: "14px", width: "90%" }} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="review-summary">
+          <div className="skeleton-block" style={{ height: "40px", width: "90px", marginBottom: "12px", background: "rgba(255,255,255,0.14)" }} />
+          <div className="skeleton-block" style={{ height: "14px", width: "100%", background: "rgba(255,255,255,0.14)" }} />
+        </div>
+      </section>
+    );
+  }
 
   const average = reviews?.averageOverride || data?.average || "4.9";
   const count = data?.count || 0;

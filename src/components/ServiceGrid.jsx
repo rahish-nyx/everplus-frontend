@@ -1,4 +1,5 @@
 import { resolveAssetUrl } from "../api.js";
+import ShimmerImage from "./ShimmerImage.jsx";
 
 export const SERVICES = [
   {
@@ -53,7 +54,12 @@ export default function ServiceGrid({ services }) {
             <div className="service-card" key={service.title}>
               {cardImage ? (
                 <div className="service-card-image">
-                  <img src={resolveAssetUrl(cardImage)} alt={service.title} />
+                  <ShimmerImage
+                    src={resolveAssetUrl(cardImage)}
+                    alt={service.title}
+                    width="400"
+                    height="190"
+                  />
                 </div>
               ) : (
                 <div className="service-icon" aria-hidden="true">

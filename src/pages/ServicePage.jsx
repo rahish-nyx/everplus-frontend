@@ -5,16 +5,58 @@ import { resolveAssetUrl } from "../api.js";
 import { applyPageMeta } from "../seo.js";
 import { whatsappBookingUrl, CALL_TEL } from "../whatsapp.js";
 import { SERVICES, WrenchIcon, TvIcon } from "../components/ServiceGrid.jsx";
+import ShimmerImage from "../components/ShimmerImage.jsx";
 
 export default function ServicePage({ slug }) {
   const { settings } = useSettings();
   const service = settings?.pages?.services?.[slug];
+  const loading = !settings;
 
   useEffect(() => {
     if (service?.title) applyPageMeta(`${service.title} | EverPlus`, service.shortDescription || service.tagline);
   }, [service]);
 
-  if (settings && !service) {
+  // Settings hasn't arrived yet — show a skeleton instead of the old plain
+  // "Loading…" text, so this matches the shimmer treatment used everywhere
+  // else on the site.
+  if (loading) {
+    return (
+      <Layout>
+        <section className="page-hero service-page-hero">
+          <span className="section-kicker">Service</span>
+          <div
+            className="skeleton-block"
+            style={{ height: "48px", width: "min(560px, 70%)", marginBottom: "14px", background: "rgba(255,255,255,0.14)" }}
+          />
+          <div
+            className="skeleton-block"
+            style={{ height: "20px", width: "min(420px, 55%)", background: "rgba(255,255,255,0.14)" }}
+          />
+        </section>
+
+        <section className="service-highlights">
+          {Array.from({ length: 4 }).map((_, index) => (
+            <span
+              className="skeleton-block"
+              key={index}
+              style={{ height: "36px", width: "140px", borderRadius: "999px" }}
+            />
+          ))}
+        </section>
+
+        <section className="page-content">
+          <div className="skeleton-block" style={{ height: "18px", width: "80%" }} />
+          <div className="skeleton-block" style={{ height: "18px", width: "60%" }} />
+          <div
+            className="skeleton-block"
+            style={{ height: "320px", width: "100%", maxWidth: "720px", margin: "10px auto 0" }}
+          />
+        </section>
+      </Layout>
+    );
+  }
+
+  if (!service) {
     return (
       <Layout>
         <section className="page-hero">
@@ -31,11 +73,11 @@ export default function ServicePage({ slug }) {
     <Layout>
       <section className="page-hero service-page-hero">
         <span className="section-kicker">Service</span>
-        <h1>{service?.title || "Loading…"}</h1>
-        {service?.tagline ? <p>{service.tagline}</p> : null}
+        <h1>{service.title}</h1>
+        {service.tagline ? <p>{service.tagline}</p> : null}
       </section>
 
-      {service?.highlights?.length ? (
+      {service.highlights?.length ? (
         <section className="service-highlights">
           {service.highlights.map((highlight) => (
             <span className="highlight-chip" key={highlight}>
@@ -45,20 +87,23 @@ export default function ServicePage({ slug }) {
         </section>
       ) : null}
 
-      {service ? (
-        <section className="page-content">
-          {service.shortDescription ? <p className="lead-paragraph">{service.shortDescription}</p> : null}
+      <section className="page-content">
+        {service.shortDescription ? <p className="lead-paragraph">{service.shortDescription}</p> : null}
 
-          {service.middleImage?.url ? (
-            <figure className="service-single-image">
-              <img src={resolveAssetUrl(service.middleImage.url)} alt={service.middleImage.caption || service.title} />
-              {service.middleImage.caption ? <figcaption>{service.middleImage.caption}</figcaption> : null}
-            </figure>
-          ) : null}
+        {service.middleImage?.url ? (
+          <figure className="service-single-image">
+            <ShimmerImage
+              src={resolveAssetUrl(service.middleImage.url)}
+              alt={service.middleImage.caption || service.title}
+              width="720"
+              height="420"
+            />
+            {service.middleImage.caption ? <figcaption>{service.middleImage.caption}</figcaption> : null}
+          </figure>
+        ) : null}
 
-          {service.detailedDescription ? <p>{service.detailedDescription}</p> : null}
-        </section>
-      ) : null}
+        {service.detailedDescription ? <p>{service.detailedDescription}</p> : null}
+      </section>
 
       <section className="service-cta">
         <div className="hero-cta-row">
@@ -67,7 +112,7 @@ export default function ServicePage({ slug }) {
           </a>
           <a
             className="primary-button hero-cta hero-cta-whatsapp"
-            href={whatsappBookingUrl(service?.title)}
+            href={whatsappBookingUrl(service.title)}
             target="_blank"
             rel="noreferrer"
           >
@@ -76,44 +121,52 @@ export default function ServicePage({ slug }) {
         </div>
       </section>
 
-      {service?.bottomImage?.url ? (
+      {service.bottomImage?.url ? (
         <section className="page-content">
           <figure className="service-single-image">
-            <img src={resolveAssetUrl(service.bottomImage.url)} alt={service.bottomImage.caption || service.title} />
+            <ShimmerImage
+              src={resolveAssetUrl(service.bottomImage.url)}
+              alt={service.bottomImage.caption || service.title}
+              width="720"
+              height="420"
+            />
             {service.bottomImage.caption ? <figcaption>{service.bottomImage.caption}</figcaption> : null}
           </figure>
         </section>
       ) : null}
 
-      {service ? (
-        <section className="other-services-section">
-          <div className="section-header">
-            <span className="section-kicker">Other Services</span>
-          </div>
-          <div className="other-services-row">
-            {SERVICES.filter((item) => item.slug !== slug).map((item) => {
-              const cardImage = settings?.pages?.services?.[item.slug]?.cardImage;
+      <section className="other-services-section">
+        <div className="section-header">
+          <span className="section-kicker">Other Services</span>
+        </div>
+        <div className="other-services-row">
+          {SERVICES.filter((item) => item.slug !== slug).map((item) => {
+            const cardImage = settings?.pages?.services?.[item.slug]?.cardImage;
 
-              return (
-                <a className="other-service-card" href={item.href} key={item.slug}>
-                  {cardImage ? (
-                    <div className="other-service-card-image">
-                      <img src={resolveAssetUrl(cardImage)} alt={item.title} />
-                    </div>
-                  ) : (
-                    <div className="service-icon" aria-hidden="true">
-                      {item.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
-                    </div>
-                  )}
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  <span className="other-service-more">More →</span>
-                </a>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
+            return (
+              <a className="other-service-card" href={item.href} key={item.slug}>
+                {cardImage ? (
+                  <div className="other-service-card-image">
+                    <ShimmerImage
+                      src={resolveAssetUrl(cardImage)}
+                      alt={item.title}
+                      width="260"
+                      height="160"
+                    />
+                  </div>
+                ) : (
+                  <div className="service-icon" aria-hidden="true">
+                    {item.icon === "tv" ? <TvIcon /> : <WrenchIcon />}
+                  </div>
+                )}
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span className="other-service-more">More →</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
     </Layout>
   );
 }

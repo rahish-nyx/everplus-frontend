@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { resolveAssetUrl } from "../api.js";
+import ShimmerImage from "./ShimmerImage.jsx";
 import { whatsappBookingUrl, CALL_TEL } from "../whatsapp.js";
 
 const AUTOPLAY_MS = 6000;
@@ -147,7 +148,12 @@ export default function Hero({ slides, currentOffer }) {
 
       <div className="hero-photo">
         {slide.image ? (
-          <img src={resolveAssetUrl(slide.image)} alt={slide.title || "Service technician at work"} />
+          <ShimmerImage
+            src={resolveAssetUrl(slide.image)}
+            alt={slide.title || "Service technician at work"}
+            width="620"
+            height="465"
+          />
         ) : (
           <div className="hero-photo-placeholder" aria-hidden="true">
             {slide.serviceType || "EverPlus"}

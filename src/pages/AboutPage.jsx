@@ -11,6 +11,39 @@ export default function AboutPage() {
     if (about?.heading) applyPageMeta(`${about.heading} | EverPlus`, about.intro);
   }, [about]);
 
+  if (!settings) {
+    return (
+      <Layout>
+        <section className="page-hero">
+          <span className="section-kicker">About Us</span>
+          <div
+            className="skeleton-block"
+            style={{ height: "42px", width: "min(420px, 55%)", marginBottom: "14px", background: "rgba(255,255,255,0.14)" }}
+          />
+          <div
+            className="skeleton-block"
+            style={{ height: "18px", width: "min(560px, 70%)", background: "rgba(255,255,255,0.14)" }}
+          />
+        </section>
+
+        <section className="page-content">
+          <div className="content-block">
+            <div className="skeleton-block" style={{ height: "22px", width: "160px", marginBottom: "12px" }} />
+            <div className="skeleton-block" style={{ height: "16px", width: "100%", marginBottom: "6px" }} />
+            <div className="skeleton-block" style={{ height: "16px", width: "92%" }} />
+          </div>
+
+          <div className="content-block">
+            <div className="skeleton-block" style={{ height: "22px", width: "160px", marginBottom: "12px" }} />
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="skeleton-block" style={{ height: "40px", width: "100%", marginBottom: "8px" }} />
+            ))}
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <section className="page-hero">

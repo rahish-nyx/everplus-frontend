@@ -12,6 +12,37 @@ export default function ContactPage() {
     applyPageMeta("Contact Us | EverPlus", contact?.intro);
   }, [contact]);
 
+  if (!settings) {
+    return (
+      <Layout>
+        <section className="page-hero">
+          <span className="section-kicker">Get In Touch</span>
+          <div
+            className="skeleton-block"
+            style={{ height: "42px", width: "min(300px, 45%)", marginBottom: "14px", background: "rgba(255,255,255,0.14)" }}
+          />
+          <div
+            className="skeleton-block"
+            style={{ height: "18px", width: "min(520px, 65%)", background: "rgba(255,255,255,0.14)" }}
+          />
+        </section>
+
+        <section className="contact-grid">
+          <div className="contact-info-card">
+            <div className="skeleton-block" style={{ height: "18px", width: "50%", marginBottom: "16px" }} />
+            <div className="skeleton-block" style={{ height: "46px", width: "100%", marginBottom: "10px", borderRadius: "6px" }} />
+            <div className="skeleton-block" style={{ height: "46px", width: "100%", marginBottom: "10px", borderRadius: "6px" }} />
+            <div className="skeleton-block" style={{ height: "46px", width: "70%", borderRadius: "6px" }} />
+          </div>
+
+          <div className="contact-image-placeholder">
+            <div className="skeleton-block" style={{ width: "100%", height: "100%", borderRadius: "10px" }} />
+          </div>
+        </section>
+      </Layout>
+    );
+  }
+
   const phone = footer?.phone || "";
   const email = footer?.email || "";
   const whatsappDigits = (contact?.whatsappNumber || phone).replace(/\D/g, "");
