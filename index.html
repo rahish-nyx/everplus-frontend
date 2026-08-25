@@ -5,18 +5,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE3YDY8CM9"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GE3YDY8CM9"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GE3YDY8CM9');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-GE3YDY8CM9");
     </script>
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <title>EverPlus Repair Services | AC, Washing Machine, Refrigerator &amp; Microwave Repair</title>
+    <style>
+      /* ---- Critical CSS: inlined so header + hero render correctly
+     instantly, before the deferred full stylesheet arrives. This is a
+     deliberate subset of styles.css — only what's needed for the first
+     paint (variables, reset, header, hero). Everything else still loads
+     from the real stylesheet as before. ---- */
+      :root {
+        --navy: #003366;
+        --navy-dark: #001e3d;
+        --orange: #ff8c00;
+        --orange-dark: #d87500;
+        --ink: #17202a;
+        --muted: #607086;
+        --line: #d8e0e8;
+        --surface: #ffffff;
+        --soft: #f3f7fb;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        box-shadow: 0 8px 28px rgba(0, 27, 61, 0.12);
+      }
+      .utility-bar {
+        align-items: center;
+        background: var(--navy-dark);
+        color: #ffffff;
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        min-height: 34px;
+        padding: 6px clamp(18px, 5vw, 72px);
+        font-size: 0.86rem;
+      }
+      .utility-bar a,
+      .socials {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+      }
+      .header-phone-link {
+        font-weight: 800;
+        color: #ffd198;
+      }
+      .main-nav {
+        align-items: center;
+        background: #ffffff;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        justify-content: space-between;
+        min-height: 74px;
+        padding: 12px clamp(18px, 5vw, 72px);
+      }
+      .logo {
+        color: var(--navy);
+        font-size: 1.75rem;
+        font-weight: 900;
+      }
+      .logo span {
+        color: var(--orange);
+      }
+      .nav-links {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        justify-content: flex-end;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+      }
+      .header-cta,
+      .primary-button {
+        background: var(--orange);
+        border: 0;
+        border-radius: 6px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-flex;
+        font-weight: 900;
+        justify-content: center;
+        padding: 11px 14px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .header-whatsapp-cta {
+        display: none;
+      }
+      .menu-button {
+        background: transparent;
+        border: 0;
+        color: var(--navy);
+        display: none;
+      }
+
+      .hero {
+        background:
+          linear-gradient(
+            115deg,
+            rgba(0, 51, 102, 0.97),
+            rgba(0, 70, 138, 0.83)
+          ),
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 140, 0, 0.38),
+            transparent 32%
+          ),
+          #003366;
+        color: #ffffff;
+        display: grid;
+        gap: clamp(28px, 5vw, 64px);
+        grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.65fr);
+        min-height: calc(100vh - 108px);
+        padding: clamp(54px, 8vw, 104px) clamp(18px, 5vw, 72px);
+        position: relative;
+      }
+      .hero-copy {
+        align-self: center;
+        max-width: 800px;
+      }
+      .offer-pill,
+      .section-kicker {
+        color: var(--orange);
+        display: inline-block;
+        font-size: 0.84rem;
+        font-weight: 900;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+      .offer-pill {
+        background: rgba(255, 140, 0, 0.16);
+        border: 1px solid rgba(255, 140, 0, 0.42);
+        border-radius: 999px;
+        color: #ffd198;
+        padding: 8px 13px;
+      }
+      .hero h1 {
+        font-size: clamp(2.75rem, 6vw, 5.7rem);
+        line-height: 0.98;
+        margin: 0;
+        max-width: 880px;
+      }
+      .hero h2 {
+        color: #dce8f4;
+        font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+        font-weight: 500;
+        line-height: 1.48;
+        margin: 22px 0 28px;
+        max-width: 760px;
+      }
+      .trust-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 26px;
+      }
+      .trust-badges span {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        display: flex;
+        gap: 8px;
+        padding: 11px 13px;
+      }
+      .hero-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .hero-cta {
+        padding: 14px 22px;
+      }
+      .hero-cta-call {
+        background: var(--navy);
+      }
+      .hero-cta-whatsapp {
+        background: #25d366;
+      }
+      .hero-photo {
+        aspect-ratio: 4 / 3;
+        background: rgba(0, 16, 39, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin-top: 28px;
+        max-width: 620px;
+        overflow: hidden;
+        position: relative;
+        align-self: center;
+        width: 100%;
+      }
+      .hero-photo img {
+        display: block;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+
+      @media (max-width: 1040px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .main-nav {
+          min-height: 66px;
+          position: relative;
+        }
+        .menu-button {
+          display: inline-flex;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          min-height: auto;
+        }
+        .hero h1 {
+          font-size: clamp(2.4rem, 12vw, 3.8rem);
+        }
+        .hero-cta-row {
+          flex-direction: column;
+        }
+        .hero-cta {
+          justify-content: center;
+          width: 100%;
+        }
+      }
+    </style>
+
+    <title>
+      EverPlus Repair Services | AC, Washing Machine, Refrigerator &amp;
+      Microwave Repair
+    </title>
     <meta
       name="description"
       content="EverPlus offers same-day AC repair, washing machine repair, refrigerator repair, and microwave repair from licensed, background-checked technicians. Book a certified appliance repair near you today."
@@ -32,7 +302,10 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="EverPlus" />
-    <meta property="og:title" content="EverPlus Repair Services | AC, Washing Machine, Refrigerator &amp; Microwave Repair" />
+    <meta
+      property="og:title"
+      content="EverPlus Repair Services | AC, Washing Machine, Refrigerator &amp; Microwave Repair"
+    />
     <meta
       property="og:description"
       content="Same-day AC, washing machine, refrigerator, and microwave repair from licensed technicians. Upfront pricing, no surprises."
@@ -42,7 +315,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="EverPlus Repair Services | AC & Appliance Repair" />
+    <meta
+      name="twitter:title"
+      content="EverPlus Repair Services | AC & Appliance Repair"
+    />
     <meta
       name="twitter:description"
       content="Same-day AC, washing machine, refrigerator, and microwave repair from licensed technicians."
@@ -61,11 +337,32 @@
         "priceRange": "$$",
         "areaServed": "Local service area",
         "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washing Machine Repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Refrigerator Repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Microwave Repair" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED & Smart TV Repair" } }
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "AC Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Washing Machine Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Refrigerator Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Microwave Repair" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LED & Smart TV Repair"
+            }
+          }
         ]
       }
     </script>
