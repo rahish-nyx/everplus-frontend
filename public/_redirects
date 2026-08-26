@@ -1,1 +1,11 @@
-/*    /index.html   404
+/                              /index.html   200
+/about                         /index.html   200
+/contact                       /index.html   200
+/faq                           /index.html   200
+/services/ac-repair            /index.html   200
+/services/washing-machine-repair   /index.html   200
+/services/refrigerator-repair  /index.html   200
+/services/microwave-repair     /index.html   200
+/services/led-tv-repair        /index.html   200
+/admin/*                       /index.html   200
+/*                             /index.html   404
