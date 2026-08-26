@@ -132,7 +132,7 @@ export default function ReviewsSection({ reviews }) {
 
 function StarRow({ value }) {
   return (
-    <span className="star-row" aria-label={`${value} out of 5 stars`}>
+    <span className="star-row" role="img" aria-label={`${value} out of 5 stars`}>
       {[1, 2, 3, 4, 5].map((n) => (
         <StarIcon key={n} filled={n <= value} />
       ))}

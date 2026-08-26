@@ -4,12 +4,17 @@ const currentYear = new Date().getFullYear();
 // responded yet (or the backend is unreachable), so the footer is never blank.
 const FALLBACK_FOOTER = {
   companyName: "EverPlus",
-  tagline: "Trusted appliance & HVAC repair, done right the first time.",
-  phone: "",
-  email: "",
+  tagline: "Expert Service. Reliable Repairs. Everyday Comfort.",
+  phone: "7725097277",
+  email: "everplushomeservice@gmail.com",
   license: "",
   locations: [],
-  services: ["AC Repair", "Washing Machine Repair", "Refrigerator Repair", "Microwave Repair"],
+  services: [
+    "AC Repair",
+    "Washing Machine Repair",
+    "Refrigerator Repair",
+    "Microwave Repair"
+  ],
   quickLinks: [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
@@ -59,7 +64,7 @@ export default function Footer({ footer }) {
 
         {locations.length ? (
           <div className="footer-locations">
-            <h4>The best service for your home, near you:</h4>
+            <h3>The best service for your home, near you:</h3>
             {locations.map((loc, index) => (
               <div className="footer-location" key={`${loc.city}-${index}`}>
                 <strong>{loc.city}</strong>
@@ -74,7 +79,7 @@ export default function Footer({ footer }) {
 
         {services.length ? (
           <div className="footer-links-col">
-            <h4>Our Services</h4>
+            <h3>Our Services</h3>
             <ul>
               {services.map((service) => (
                 <li key={service}>{service}</li>
@@ -85,7 +90,7 @@ export default function Footer({ footer }) {
 
         {quickLinks.length ? (
           <div className="footer-links-col">
-            <h4>Quick Links</h4>
+            <h3>Quick Links</h3>
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -100,7 +105,13 @@ export default function Footer({ footer }) {
       {social.length ? (
         <div className="footer-social">
           {social.map((item) => (
-            <a key={item.platform} href={item.url} target="_blank" rel="noreferrer" aria-label={item.platform}>
+            <a
+              key={item.platform}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={item.platform}
+            >
               {item.platform}
             </a>
           ))}
@@ -116,7 +127,14 @@ export default function Footer({ footer }) {
 
 function PhoneIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   );

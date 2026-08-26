@@ -14,7 +14,7 @@ const FALLBACK_SLIDES = [
     badge: "AC REPAIR SPECIAL",
     title: "Fast AC Repair, Any Day of the Week",
     subtitle: "Certified technicians restore your cooling fast — upfront pricing, no surprises.",
-    price: "$59 Diagnostic",
+    price: "  ₹300 Service Call",
     ctaText: "Schedule AC Repair",
     image: "",
     serviceType: "AC Repair"
@@ -24,7 +24,7 @@ const FALLBACK_SLIDES = [
     badge: "WASHING MACHINE EXPERTS",
     title: "Washing Machine Repair Done Right",
     subtitle: "Leaks, noise, or a machine that won't spin — we fix it same day.",
-    price: "$49 Service Call",
+    price: " ₹300 Service Call",
     ctaText: "Book a Repair",
     image: "",
     serviceType: "Washing Machine Repair"
@@ -34,8 +34,8 @@ const FALLBACK_SLIDES = [
     badge: "LED TV REPAIR",
     title: "LED & Smart TV Repair Specialists",
     subtitle: "Screen, panel, and power issues fixed by certified electronics technicians.",
-    price: "Free Estimate",
-    ctaText: "Get a Free Estimate",
+    price: " ₹300 Service Call",
+    ctaText: "Book a Repair",
     image: "",
     serviceType: "LED TV Repair"
   }

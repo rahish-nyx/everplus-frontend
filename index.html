@@ -4,18 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-GE3YDY8CM9"
-    ></script>
+    <!-- Google tag (gtag.js) - Deferred loading -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-GE3YDY8CM9");
+
+      function loadGtag() {
+        if (window._gtagLoaded) return;
+        window._gtagLoaded = true;
+        const s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-GE3YDY8CM9";
+        document.head.appendChild(s);
+        gtag("config", "G-GE3YDY8CM9");
+      }
+
+      // Loads on first user interaction (scroll, click, touch) or after 3.5s idle
+      ["scroll", "keydown", "touchstart", "click"].forEach((evt) =>
+        window.addEventListener(evt, loadGtag, { once: true, passive: true }),
+      );
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => setTimeout(loadGtag, 2500));
+      } else {
+        setTimeout(loadGtag, 3500);
+      }
     </script>
 
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -167,6 +182,7 @@
         min-height: calc(100vh - 108px);
         padding: clamp(54px, 8vw, 104px) clamp(18px, 5vw, 72px);
         position: relative;
+        contain: layout;
       }
       .hero-copy {
         align-self: center;
@@ -242,6 +258,7 @@
         position: relative;
         align-self: center;
         width: 100%;
+        contain: layout;
       }
       .hero-photo img {
         display: block;
@@ -268,7 +285,8 @@
           display: none;
         }
         .hero {
-          min-height: auto;
+          min-height: 560px;
+          align-content: start;
         }
         .hero h1 {
           font-size: clamp(2.4rem, 12vw, 3.8rem);
@@ -298,6 +316,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="author" content="EverPlus" />
     <link rel="canonical" href="https://everplushomeservice.in/" />
+    <!-- AI Search & Machine-Readable Spec Discovery -->
+    <link rel="describedby" href="/llms.txt" type="text/markdown" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -329,41 +349,90 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "name": "EverPlus",
-        "description": "Same-day AC repair, washing machine repair, refrigerator repair, and microwave repair from licensed, background-checked technicians.",
+        "@type": "LocalBusiness",
+        "name": "EverPlus Appliance Repair Services",
+        "@id": "https://everplushomeservice.in/",
+        "serviceType": "Home & Electronic Appliance Repair Services",
         "url": "https://everplushomeservice.in/",
         "telephone": "+91-7725097277",
-        "priceRange": "$$",
-        "areaServed": "Local service area",
-        "makesOffer": [
+        "priceRange": "₹₹",
+        "image": "https://everplushomeservice.in/og-image.jpg",
+        "description": "EverPlus offers verified same-day doorstep AC, refrigerator, washing machine, microwave, and TV repair services in Raipur, Chhattisgarh.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Raipur",
+          "addressRegion": "Chhattisgarh",
+          "postalCode": "492001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "21.2514",
+          "longitude": "81.6296"
+        },
+        "areaServed": [
           {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "AC Repair" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Washing Machine Repair"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Refrigerator Repair" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Microwave Repair" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "LED & Smart TV Repair"
-            }
+            "@type": "City",
+            "name": "Raipur"
           }
-        ]
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "09:00",
+            "closes": "21:00"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Appliance Repair Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AC Repair & Gas Refilling"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Washing Machine Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Refrigerator & Fridge Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Microwave Oven Repair"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "LED & Smart TV Repair"
+              }
+            }
+          ]
+        }
       }
     </script>
   </head>
